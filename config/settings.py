@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'jalali_date',
     'accounts',
+    'services',
 ]
 
 MIDDLEWARE = [
