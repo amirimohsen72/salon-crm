@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'jalali_date',
     'accounts',
     'services',
+    'appointments',
 ]
 
 MIDDLEWARE = [
