@@ -2,6 +2,9 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 from datetime import timedelta
+from jalali_date import jdatetime
+from django.utils.timezone import localtime
+from jalali_date import datetime2jalali, date2jalali
 
 from accounts.models import Customer
 from services.models import Service
@@ -35,7 +38,9 @@ class Appointment(models.Model):
     )
 
     def __str__(self):
-        return f"{self.customer} ({self.reservation_date})"
+        if self.reservation_date:
+            return f"{self.customer} ({date2jalali(self.reservation_date).strftime('%Y/%m/%d')})" 
+        return f"{self.customer}"
     
 
 class AppointmentService(models.Model):
