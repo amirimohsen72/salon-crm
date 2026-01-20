@@ -174,3 +174,7 @@ JALALI_DATE_DEFAULTS = {
 # ACCOUNT_EMAIL_REQUIRED = False #ایمیل اجباری
 # ACCOUNT_UNIQUE_EMAIL = True #ایمیل به صورت یونیک باشد
 
+SMS_API_KEY = config('SMS_K_API_KEY')
+SMS_BASE_URL = config('SMS_K_URL')
+SMS_SENDER_NUMBER = config('SMS_K_NUMBER')
+SMS_PROVIDER = 'dummy'  # dummy | kavenegar
