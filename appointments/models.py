@@ -7,6 +7,7 @@ from django.utils.timezone import localtime
 from jalali_date import datetime2jalali, date2jalali
 
 from accounts.models import Customer
+from salons.models import SalonBaseModel
 from services.models import Service
 
 class Status(models.TextChoices):
@@ -14,7 +15,7 @@ class Status(models.TextChoices):
         DONE = 'done', _('Done')
         CANCELED = 'canceled', _('Canceled')
 
-class Appointment(models.Model):
+class Appointment(SalonBaseModel):
     class Meta:
         verbose_name = _('appointment')
         verbose_name_plural = _('appointments')
@@ -36,6 +37,7 @@ class Appointment(models.Model):
         default=Status.RESERVED,
         verbose_name=_('status')
     )
+
 
     def __str__(self):
         if self.reservation_date:

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-21 16:58+0330\n"
-"PO-Revision-Date: 2026-01-21 17:01+0330\n"
+"POT-Creation-Date: 2026-01-22 01:00+0330\n"
+"PO-Revision-Date: 2026-01-22 00:34+0330\n"
 "Last-Translator:   <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,103 +18,107 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.3\n"
 
-#: .\accounts\apps.py:8 .\accounts\models.py:10
+#: .\accounts\apps.py:8 .\accounts\models.py:13
 msgid "accounts"
 msgstr "حساب های کاربری"
 
-#: .\accounts\models.py:9
+#: .\accounts\models.py:12
 msgid "account"
 msgstr "حساب کاربری"
 
-#: .\accounts\models.py:12
+#: .\accounts\models.py:15
 msgid "age"
 msgstr "سن"
 
-#: .\accounts\models.py:13 .\accounts\models.py:43
+#: .\accounts\models.py:16 .\accounts\models.py:57
 msgid "phone number"
 msgstr "شماره تلفن"
 
-#: .\accounts\models.py:23
+#: .\accounts\models.py:22
+msgid "salon"
+msgstr "سالن"
+
+#: .\accounts\models.py:37
 msgid "month 1"
 msgstr "فروردین"
 
-#: .\accounts\models.py:24
+#: .\accounts\models.py:38
 msgid "month 2"
 msgstr "اردیبهشت"
 
-#: .\accounts\models.py:25
+#: .\accounts\models.py:39
 msgid "month 3"
 msgstr "خرداد"
 
-#: .\accounts\models.py:26
+#: .\accounts\models.py:40
 msgid "month 4"
 msgstr "تیر"
 
-#: .\accounts\models.py:27
+#: .\accounts\models.py:41
 msgid "month 5"
 msgstr "مرداد"
 
-#: .\accounts\models.py:28
+#: .\accounts\models.py:42
 msgid "month 6"
 msgstr "شهریور"
 
-#: .\accounts\models.py:29
+#: .\accounts\models.py:43
 msgid "month 7"
 msgstr "مهر"
 
-#: .\accounts\models.py:30
+#: .\accounts\models.py:44
 msgid "month 8"
 msgstr "آبان"
 
-#: .\accounts\models.py:31
+#: .\accounts\models.py:45
 msgid "month 9"
 msgstr "آذر"
 
-#: .\accounts\models.py:32
+#: .\accounts\models.py:46
 msgid "month 10"
 msgstr "دی"
 
-#: .\accounts\models.py:33
+#: .\accounts\models.py:47
 msgid "month 11"
 msgstr "بهمن"
 
-#: .\accounts\models.py:34
+#: .\accounts\models.py:48
 msgid "month 12"
 msgstr "اسفند"
 
-#: .\accounts\models.py:38
+#: .\accounts\models.py:52
 msgid "customer"
 msgstr "مشتری"
 
-#: .\accounts\models.py:39
+#: .\accounts\models.py:53
 msgid "customers"
 msgstr "مشتریان"
 
-#: .\accounts\models.py:41
+#: .\accounts\models.py:55
 msgid "first name"
 msgstr "نام"
 
-#: .\accounts\models.py:42
+#: .\accounts\models.py:56
 msgid "last name"
 msgstr "نام خانوادگی"
 
-#: .\accounts\models.py:44
+#: .\accounts\models.py:58
 msgid "birth date"
 msgstr "تاریخ تولد"
 
-#: .\accounts\models.py:49
+#: .\accounts\models.py:63
 msgid "birth month"
 msgstr "ماه تولد"
 
-#: .\accounts\models.py:51
+#: .\accounts\models.py:65
 msgid "created at"
 msgstr "تاریخ ثبت"
 
-#: .\accounts\models.py:52
+#: .\accounts\models.py:66
 msgid "active"
 msgstr "فعال"
 
-#: .\accounts\models.py:53
+#: .\accounts\models.py:67
 msgid "note"
 msgstr "یادداشت"
 

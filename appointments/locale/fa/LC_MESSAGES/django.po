@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-21 23:45+0330\n"
-"PO-Revision-Date: 2026-01-21 17:55+0330\n"
+"POT-Creation-Date: 2026-01-22 01:00+0330\n"
+"PO-Revision-Date: 2026-01-22 00:34+0330\n"
 "Last-Translator:   <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.3\n"
 
-#: .\appointments\admin.py:23 .\appointments\models.py:62
+#: .\appointments\admin.py:23 .\appointments\models.py:64
 msgid "end time"
 msgstr "زمان پایان"
 
@@ -26,58 +26,61 @@ msgstr "زمان پایان"
 msgid "remember appointment send sms"
 msgstr "ارسال پیامک یادآوری رزرو"
 
-#: .\appointments\apps.py:8 .\appointments\models.py:20
+#: .\appointments\apps.py:8 .\appointments\models.py:21
 msgid "appointments"
 msgstr "زمان های رزرو"
 
-#: .\appointments\models.py:13
+#: .\appointments\models.py:14
 msgid "Reserved"
 msgstr "رزرو شده"
 
-#: .\appointments\models.py:14
+#: .\appointments\models.py:15
 msgid "Done"
 msgstr "انجام شده"
 
-#: .\appointments\models.py:15
+#: .\appointments\models.py:16
 msgid "Canceled"
 msgstr "لغو شده"
 
-#: .\appointments\models.py:19 .\appointments\models.py:54
+#: .\appointments\models.py:20 .\appointments\models.py:56
 msgid "appointment"
 msgstr "رزرو"
 
-#: .\appointments\models.py:22
+#: .\appointments\models.py:23
 msgid "customer"
 msgstr "مشتری"
 
-#: .\appointments\models.py:23
+#: .\appointments\models.py:24
 msgid "created at"
 msgstr "زمان ثبت"
 
-#: .\appointments\models.py:26
+#: .\appointments\models.py:27
 msgid "reservation date"
 msgstr "تاریخ رزرو"
 
-#: .\appointments\models.py:31
+#: .\appointments\models.py:32
 msgid "note"
 msgstr "یادداشت"
 
-#: .\appointments\models.py:37
+#: .\appointments\models.py:38
 msgid "status"
 msgstr "وضعیت"
 
-#: .\appointments\models.py:48
+#: .\appointments\models.py:50
 msgid "appointment service"
 msgstr "خدمت رزرو شده"
 
-#: .\appointments\models.py:49
+#: .\appointments\models.py:51
 msgid "appointment services"
 msgstr "خدمات رزرو شده"
 
-#: .\appointments\models.py:59
+#: .\appointments\models.py:61
 msgid "service"
 msgstr "خدمت"
 
-#: .\appointments\models.py:61
+#: .\appointments\models.py:63
 msgid "start time"
 msgstr "زمان شروع"
+
+#~ msgid "salon"
+#~ msgstr "سالن"

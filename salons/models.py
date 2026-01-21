@@ -79,3 +79,14 @@ class Salon(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class SalonBaseModel(models.Model):
+    salon = models.ForeignKey(
+        Salon,
+        on_delete=models.CASCADE,
+        verbose_name=_('salon')
+    )
+
+    class Meta:
+        abstract = True

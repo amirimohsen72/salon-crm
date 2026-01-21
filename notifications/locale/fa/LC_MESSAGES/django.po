@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-21 17:53+0330\n"
-"PO-Revision-Date: 2026-01-21 17:50+0330\n"
+"POT-Creation-Date: 2026-01-22 01:00+0330\n"
+"PO-Revision-Date: 2026-01-22 00:35+0330\n"
 "Last-Translator:   <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,111 +22,114 @@ msgstr ""
 msgid "notifications"
 msgstr "اعلان اطلاع رسانی"
 
-#: .\notifications\models.py:7
+#: .\notifications\models.py:9
 msgid "appointment confirm"
 msgstr "پزیرش رزرو"
 
-#: .\notifications\models.py:8
+#: .\notifications\models.py:10
 msgid "appointment reminder"
 msgstr "یادآوری رزرو"
 
-#: .\notifications\models.py:9
+#: .\notifications\models.py:11
 msgid "birthday"
 msgstr "تاریخ تولد"
 
-#: .\notifications\models.py:10
+#: .\notifications\models.py:12
 msgid "promotion"
 msgstr "پروموشن تخفیفات"
 
-#: .\notifications\models.py:11
+#: .\notifications\models.py:13
 msgid "custom"
 msgstr "سفارشی"
 
-#: .\notifications\models.py:13
+#: .\notifications\models.py:15
 msgid "sms template"
 msgstr "قالب نمونه پیامکی"
 
-#: .\notifications\models.py:14
+#: .\notifications\models.py:16
 msgid "sms templates"
 msgstr "قالب های نمونه پیامکی"
 
-#: .\notifications\models.py:16
+#: .\notifications\models.py:18
 msgid "title"
 msgstr "عنوان"
 
-#: .\notifications\models.py:17
+#: .\notifications\models.py:19
 msgid "formated message"
 msgstr "متن پیغام فرمت شده"
 
-#: .\notifications\models.py:17
+#: .\notifications\models.py:19
 msgid "can use variables like {{name}}, {{date}}, {{time}}"
 msgstr ""
 "می توانید از متغییر هایی همانند  {{name}}, {{date}}, {{time}} استفاده کنید"
 
-#: .\notifications\models.py:18
+#: .\notifications\models.py:20
 msgid "template type"
 msgstr "نوع قالب"
 
-#: .\notifications\models.py:19
+#: .\notifications\models.py:21
 msgid "active"
 msgstr "فعال"
 
-#: .\notifications\models.py:21 .\notifications\models.py:88
+#: .\notifications\models.py:22 .\notifications\models.py:89
 msgid "created at"
 msgstr "زمان ثبت"
 
-#: .\notifications\models.py:22
+#: .\notifications\models.py:23
 msgid "modified at"
 msgstr "زمان ویرایش"
 
-#: .\notifications\models.py:29
+#: .\notifications\models.py:30
 msgid "pending"
 msgstr "در انتظار"
 
-#: .\notifications\models.py:30
+#: .\notifications\models.py:31
 msgid "sent"
 msgstr "ارسال شده"
 
-#: .\notifications\models.py:31
+#: .\notifications\models.py:32
 msgid "failed"
 msgstr "دارای خطا "
 
-#: .\notifications\models.py:33
+#: .\notifications\models.py:34
 msgid "sms log"
 msgstr "تاریخچه پیامکی"
 
-#: .\notifications\models.py:34
+#: .\notifications\models.py:35
 msgid "sms logs"
 msgstr "تاریخچه پیامک ها"
 
-#: .\notifications\models.py:40
+#: .\notifications\models.py:41
 msgid "template"
 msgstr "نمونه"
 
-#: .\notifications\models.py:48
+#: .\notifications\models.py:49
 msgid "customer"
 msgstr "مشتری"
 
-#: .\notifications\models.py:56
+#: .\notifications\models.py:57
 msgid "appointment"
 msgstr "رزرو"
 
-#: .\notifications\models.py:61
+#: .\notifications\models.py:62
 msgid "phone number"
 msgstr "شماره تلفن"
 
-#: .\notifications\models.py:65
+#: .\notifications\models.py:66
 msgid "final message"
 msgstr "متن نهایی"
 
-#: .\notifications\models.py:72
+#: .\notifications\models.py:73
 msgid "status"
 msgstr "وضعیت"
 
-#: .\notifications\models.py:77
+#: .\notifications\models.py:78
 msgid "provider response"
 msgstr "پاسخ ارائه دهنده سرویس"
 
-#: .\notifications\models.py:83
+#: .\notifications\models.py:84
 msgid "sent at"
 msgstr "ارسال شده در"
+
+#~ msgid "salon"
+#~ msgstr "سالن"

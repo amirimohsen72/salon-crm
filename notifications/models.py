@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-class SMSTemplate(models.Model):
+from salons.models import SalonBaseModel
+
+class SMSTemplate(SalonBaseModel):
 
     class Type(models.TextChoices):
         APPOINTMENT_CONFIRM = 'appointment_confirm', _('appointment confirm')
@@ -17,14 +19,13 @@ class SMSTemplate(models.Model):
     message = models.TextField(verbose_name=_('formated message'),help_text=_('can use variables like {{name}}, {{date}}, {{time}}'))
     type = models.CharField(max_length=30, choices=Type.choices, verbose_name=_('template type'))
     is_active = models.BooleanField(default=True, verbose_name=_('active'))
-
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('created at'))
     updated_at = models.DateTimeField(auto_now=True, verbose_name=_('modified at'))
 
     def __str__(self):
         return self.title
 
-class SMSLog(models.Model):
+class SMSLog(SalonBaseModel):
     class Status(models.TextChoices):
         PENDING = 'pending', _('pending')
         SENT = 'sent', _('sent')

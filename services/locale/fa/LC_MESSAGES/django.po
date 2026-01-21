@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-21 17:16+0330\n"
-"PO-Revision-Date: 2026-01-21 17:11+0330\n"
+"POT-Creation-Date: 2026-01-22 01:00+0330\n"
+"PO-Revision-Date: 2026-01-22 00:35+0330\n"
 "Last-Translator:   <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -18,38 +18,41 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Translated-Using: django-rosetta 0.10.3\n"
 
-#: .\services\apps.py:8 .\services\models.py:9
+#: .\services\apps.py:8 .\services\models.py:11
 msgid "services"
 msgstr "خدمات"
 
-#: .\services\models.py:8
+#: .\services\models.py:10
 msgid "service"
 msgstr "خدمت"
 
-#: .\services\models.py:11
+#: .\services\models.py:13
 msgid "service name"
 msgstr "نام خدمت"
 
-#: .\services\models.py:12
+#: .\services\models.py:14
 msgid "description"
 msgstr "توضیحات"
 
-#: .\services\models.py:13
+#: .\services\models.py:15
 msgid "price"
 msgstr "قیمت"
 
-#: .\services\models.py:14
+#: .\services\models.py:16
 msgid "duration time"
 msgstr "زمان ارائه"
 
-#: .\services\models.py:14
+#: .\services\models.py:16
 msgid "minute"
 msgstr "دقیقه"
 
-#: .\services\models.py:15
+#: .\services\models.py:17
 msgid "active"
 msgstr "فعال"
 
-#: .\services\models.py:16
+#: .\services\models.py:18
 msgid "modify date"
 msgstr "تاریخ ویرایش"
+
+#~ msgid "salon"
+#~ msgstr "سالن"

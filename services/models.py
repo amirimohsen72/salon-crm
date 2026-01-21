@@ -2,8 +2,10 @@ from django.db import models
 
 from django.utils.translation import gettext_lazy as _
 
+from salons.models import SalonBaseModel
 
-class Service(models.Model):
+
+class Service(SalonBaseModel):
     class Meta:
         verbose_name = _('service')
         verbose_name_plural = _('services')

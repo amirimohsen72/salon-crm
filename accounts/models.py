@@ -1,7 +1,10 @@
 from django.db import models
+from salons.models import Salon
 from django.contrib.auth.models import AbstractUser
 from django.utils.translation import gettext_lazy as _
 import jdatetime
+from django.core.exceptions import ValidationError
+from salons.models import SalonBaseModel
 
 
 class CustomUser(AbstractUser):
@@ -11,13 +14,24 @@ class CustomUser(AbstractUser):
 
     age = models.PositiveIntegerField(null=True,blank=True,verbose_name=_('age')) #adad mosbat : sen
     phone_number = models.CharField(max_length=15, null=True, blank=True, verbose_name=_('phone number'))
-
+    salon = models.ForeignKey(
+        Salon,
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        verbose_name=_('salon')
+    )
     def __str__(self):
         if self.get_full_name():
             return self.get_full_name()
+        elif self.salon:
+            return f"{self.username} | {self.salon}"
         else:
             return self.username
-
+    def save_model(self, request, obj, form, change):
+        if not request.user.is_superuser and not obj.salon:
+            raise ValidationError("مدیر سالن باید به یک سالن متصل باشد")
+        super().save_model(request, obj, form, change)
 
 MONTH_CHOICES = (
     (1, _('month 1')),
@@ -33,7 +47,7 @@ MONTH_CHOICES = (
     (11, _('month 11')),
     (12, _('month 12')),
 )
-class Customer(models.Model):
+class Customer(SalonBaseModel):
     class Meta:
         verbose_name = _('customer')
         verbose_name_plural = _('customers')

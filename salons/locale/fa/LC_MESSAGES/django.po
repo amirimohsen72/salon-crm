@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-21 23:46+0330\n"
+"POT-Creation-Date: 2026-01-22 01:00+0330\n"
 "PO-Revision-Date: 2026-01-21 23:48+0330\n"
 "Last-Translator:   <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "salons"
 msgstr "سالن ها"
 
-#: .\salons\models.py:7
+#: .\salons\models.py:7 .\salons\models.py:88
 msgid "salon"
 msgstr "سالن"
 
