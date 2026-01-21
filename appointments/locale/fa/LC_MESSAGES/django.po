@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-21 17:53+0330\n"
+"POT-Creation-Date: 2026-01-21 23:45+0330\n"
 "PO-Revision-Date: 2026-01-21 17:55+0330\n"
 "Last-Translator:   <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -67,12 +67,10 @@ msgid "status"
 msgstr "وضعیت"
 
 #: .\appointments\models.py:48
-#| msgid "appointments"
 msgid "appointment service"
 msgstr "خدمت رزرو شده"
 
 #: .\appointments\models.py:49
-#| msgid "appointments"
 msgid "appointment services"
 msgstr "خدمات رزرو شده"
 
