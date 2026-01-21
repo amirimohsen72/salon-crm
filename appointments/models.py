@@ -44,6 +44,9 @@ class Appointment(models.Model):
     
 
 class AppointmentService(models.Model):
+    class Meta:
+        verbose_name = _('appointment service')
+        verbose_name_plural = _('appointment services')
     appointment = models.ForeignKey(
         Appointment,
         on_delete=models.CASCADE,

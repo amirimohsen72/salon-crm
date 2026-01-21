@@ -1,0 +1,132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-01-21 17:53+0330\n"
+"PO-Revision-Date: 2026-01-21 17:50+0330\n"
+"Last-Translator:   <amirimohsen72@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.3\n"
+
+#: .\notifications\apps.py:8
+msgid "notifications"
+msgstr "اعلان اطلاع رسانی"
+
+#: .\notifications\models.py:7
+msgid "appointment confirm"
+msgstr "پزیرش رزرو"
+
+#: .\notifications\models.py:8
+msgid "appointment reminder"
+msgstr "یادآوری رزرو"
+
+#: .\notifications\models.py:9
+msgid "birthday"
+msgstr "تاریخ تولد"
+
+#: .\notifications\models.py:10
+msgid "promotion"
+msgstr "پروموشن تخفیفات"
+
+#: .\notifications\models.py:11
+msgid "custom"
+msgstr "سفارشی"
+
+#: .\notifications\models.py:13
+msgid "sms template"
+msgstr "قالب نمونه پیامکی"
+
+#: .\notifications\models.py:14
+msgid "sms templates"
+msgstr "قالب های نمونه پیامکی"
+
+#: .\notifications\models.py:16
+msgid "title"
+msgstr "عنوان"
+
+#: .\notifications\models.py:17
+msgid "formated message"
+msgstr "متن پیغام فرمت شده"
+
+#: .\notifications\models.py:17
+msgid "can use variables like {{name}}, {{date}}, {{time}}"
+msgstr ""
+"می توانید از متغییر هایی همانند  {{name}}, {{date}}, {{time}} استفاده کنید"
+
+#: .\notifications\models.py:18
+msgid "template type"
+msgstr "نوع قالب"
+
+#: .\notifications\models.py:19
+msgid "active"
+msgstr "فعال"
+
+#: .\notifications\models.py:21 .\notifications\models.py:88
+msgid "created at"
+msgstr "زمان ثبت"
+
+#: .\notifications\models.py:22
+msgid "modified at"
+msgstr "زمان ویرایش"
+
+#: .\notifications\models.py:29
+msgid "pending"
+msgstr "در انتظار"
+
+#: .\notifications\models.py:30
+msgid "sent"
+msgstr "ارسال شده"
+
+#: .\notifications\models.py:31
+msgid "failed"
+msgstr "دارای خطا "
+
+#: .\notifications\models.py:33
+msgid "sms log"
+msgstr "تاریخچه پیامکی"
+
+#: .\notifications\models.py:34
+msgid "sms logs"
+msgstr "تاریخچه پیامک ها"
+
+#: .\notifications\models.py:40
+msgid "template"
+msgstr "نمونه"
+
+#: .\notifications\models.py:48
+msgid "customer"
+msgstr "مشتری"
+
+#: .\notifications\models.py:56
+msgid "appointment"
+msgstr "رزرو"
+
+#: .\notifications\models.py:61
+msgid "phone number"
+msgstr "شماره تلفن"
+
+#: .\notifications\models.py:65
+msgid "final message"
+msgstr "متن نهایی"
+
+#: .\notifications\models.py:72
+msgid "status"
+msgstr "وضعیت"
+
+#: .\notifications\models.py:77
+msgid "provider response"
+msgstr "پاسخ ارائه دهنده سرویس"
+
+#: .\notifications\models.py:83
+msgid "sent at"
+msgstr "ارسال شده در"

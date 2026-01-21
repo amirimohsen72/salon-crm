@@ -9,6 +9,9 @@ class SMSTemplate(models.Model):
         BIRTHDAY = 'birthday', _('birthday')
         PROMOTION = 'promotion', _('promotion')
         CUSTOM = 'custom', _('custom')
+    class Meta:
+        verbose_name = _('sms template')
+        verbose_name_plural = _('sms templates')
 
     title = models.CharField(max_length=100, verbose_name=_('title'))
     message = models.TextField(verbose_name=_('formated message'),help_text=_('can use variables like {{name}}, {{date}}, {{time}}'))
@@ -26,7 +29,9 @@ class SMSLog(models.Model):
         PENDING = 'pending', _('pending')
         SENT = 'sent', _('sent')
         FAILED = 'failed', _('failed')
-
+    class Meta:
+        verbose_name = _('sms log')
+        verbose_name_plural = _('sms logs')
     template = models.ForeignKey(
         'notifications.SMSTemplate',
         on_delete=models.SET_NULL,
