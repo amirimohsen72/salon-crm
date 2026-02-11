@@ -1,0 +1,60 @@
+
+@font-face { 
+    font-family: 'Dana';
+    src: url('../fonts/DanaVF.woff') format('woff-variations'),
+    url('../fonts/DanaVF.woff') format('woff');
+    font-display: fallback;
+}
+
+body,
+input, button, select, optgroup, textarea {
+  font-family: "Dana", sans-serif;
+  -moz-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+  font-feature-settings: "ss02";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.list-group *,
+.btn,
+.header-title,
+.accordion-button,
+#footer-bar a:not(.btn) span,
+.form-label label,
+.offline-message,
+.online-message,
+.snackbar,
+.tabs .tab-controls,
+.toast-pill,
+.toast-bar,
+.menu-divider {
+  font-family: "Dana", sans-serif;
+  letter-spacing: normal;
+}
+.menu-divider { font-size: 12px; }
+p { letter-spacing: normal; }
+.header-bar.header-app .header-title { text-align: right; }
+.offcanvas.offcanvas-bottom { height: auto; }
+.apexcharts-legend-marker { margin-left: 3px; margin-right: unset; }
+.apexcharts-yaxis-texts-g { margin-left: 20px; }
+.header-bar.header-left .header-title { padding-right: 15px; padding-left: unset; }
+.form-check-custom label { padding: 0px 40px 0px 15px; }
+.form-check-custom i { right: 0; left: unset; }
+.android-input:checked ~ .custom-control-label::after { transform: translateX(-27px); }
+.form-check-custom input { transform: translateX(10000px); }
+.form-custom.form-icon label { padding-right: 45px; padding-left: unset; }
+.theme-light .stepper a:last-child { border-right: solid 1px rgba(0, 0, 0, 0.1); border-left: unset; }
+.theme-light .stepper a:first-child { border-left: solid 1px rgba(0, 0, 0, 0.1); border-right: unset; }
+.stepper a { font-size: 11px; }
+.toast-pill i { right: 0; left: unset; }
+input[type="tel"] { padding-left: 50px!important; }
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}

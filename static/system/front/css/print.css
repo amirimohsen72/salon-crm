@@ -1,0 +1,75 @@
+
+* {
+    font-family: sans-serif;
+    direction: rtl;
+}
+
+
+@page {
+    margin: 0cm;
+}
+
+table {
+    direction: rtl;
+}
+
+body,
+table,
+td,
+th {
+    font-family: tahoma, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", serif;
+    font-style: normal;
+    font-size: 12px;
+    direction: rtl;
+}
+
+.phone_number {
+    direction: ltr;
+    float: right;
+}
+
+textarea {
+    width: 99%;
+    /*display: block;*/
+    /*height: fit-content;*/
+    /*overflow-y: visible;*/
+    /*grid-row-start: 1;*/
+    max-width: 300px;
+    /*content-visibility: visible;*/
+}
+
+.note textarea {
+    max-height: 85px;
+    /*height: 20px;*/
+    height: fit-content;
+    min-height: min-content;
+}
+
+@media print {
+    textarea {
+        border: none;
+    }
+}
+
+tfoot tr {
+    /*position: fixed;*/
+    /*bottom: 0;*/
+    width: 100%;
+    height: 35px;
+    background-color: #f7f7f7;
+}
+
+
+.header {
+    background-color: #ccc;
+
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.header {
+    background-color: #ccc;
+}
