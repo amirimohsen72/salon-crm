@@ -1,0 +1,49 @@
+{% if slider %}
+
+    <div class="owl-carousel owl-theme icon-box cols-1 cols-lg-4 mt-2 mb-2" data-toggle="owl"
+         data-owl-options='{
+                    "dots": false,
+                    "nav": false,
+                    "margin": 20,
+                    "rtl": true,
+                            "responsive": {
+                        "0": {
+                            "items": 1
+                        },
+                        "576": {
+                            "items": 2
+                        },
+                        "768": {
+                            "items": 3
+                        },
+                        "992": {
+                            "items": 4
+                        }
+                    }
+                }'>
+
+        {% for slide in slider %}
+            <div class="icon-box-side">
+                {% if slide.image %}
+                    <figure class="icon-box-icon">
+                        <img src="{{ slide.image.url }}" width="28" height="28">
+                    </figure>
+                {% elif slide.style %}
+                    <span class="icon-box-icon text-dark">
+                            <i class="{{ slide.style }}"></i>
+                        </span>
+                {% endif %}
+
+                <!--End .icon-box-icon-->
+
+                <div class="icon-box-content">
+                    <h3 class="icon-box-title">{{ slide.title }}</h3><!-- End .icon-box-title -->
+                    <p>{{ slide.description|safe }}</p>
+                </div><!-- End .icon-box-content -->
+            </div><!-- End .icon-box-side -->
+        {% endfor %}
+
+    </div>
+    <!--End .icon-box-->
+
+{% endif %}

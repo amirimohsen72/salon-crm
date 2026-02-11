@@ -1,0 +1,81 @@
+{% load i18n %}
+{% load static %}
+{% load main_tags %}
+
+{#{{ site_info.title }}#}
+<header class="header  header-31{% if request.path != '/' %} headp{% endif %}">
+
+    {#    <ul class="">#}
+    {#        {% if user.is_authenticated %}#}
+    {##}
+    {#            <li>#}
+    {#                <a class="text-right" href="{% url 'account_logout' %}">{% translate 'log out' %}</a>#}
+    {#            </li>#}
+    {#                                            <span>heloo {{ user.username }}</span>#}
+    {#        {% else %}#}
+    {#            <li>#}
+    {#                <a class="text-right"#}
+    {#                   href="{% url 'account_login' %}">{% translate 'login' %}</a>#}
+    {#            </li>#}
+    {#            <li>#}
+    {#                <a class="text-right"#}
+    {#                   href="{% url 'account_signup' %}">{% translate 'sign up' %}</a>#}
+    {#            </li>#}
+    {#        {% endif %}#}
+    {#    </ul>#}
+
+
+    {##}
+
+    <div class="header-middle sticky-header">
+        <div class="container">
+            <div class="header-left">
+                <nav class="main-nav">
+                    <ul class="menu sf-arrows">
+                        {% for cat in topmenu %}
+
+                            {#            {% if cat.parent == None %}#}
+                            <li>
+                                <a href="{{ cat.url|menu_creator:cat.internal_url }}" {% if cat.children.all %} class="sf-with-ul"{% endif %}>
+                                    {{ cat.title }}
+                                </a>
+                                {% if cat.children.all %}
+                                    {% include 'front/partials/category_loop.html' %}
+                                {% endif %}
+                            </li>
+                            {#            {% endif %}#}
+                            {#{% url 'product_list' %}#}
+                            {#                        {% if url menu.url %}{% endif %}#}
+
+
+                        {% endfor %}
+
+
+                    </ul><!-- End .menu -->
+                </nav><!-- End .main-nav -->
+
+                <button class="mobile-menu-toggler">
+                    <span class="sr-only">{% trans 'contents' %}</span>
+                    <i class="icon-bars"></i>
+                </button>
+                <!--End .mobile-menu-toggler-->
+            </div><!-- End .header-left -->
+
+            <figure class="header-center">
+                <a href="{% url 'home' %}" class="logo">
+                    {% if site_info.logo1 %}
+                        <img src="{{ site_info.logo1.url }}" alt="{{ site_info.title}}"
+                                                 width="111"
+                                                 height="105">
+                    {% endif %}
+                </a>
+            </figure><!-- End .header-center -->
+
+            {% include 'shop/navcart_box.html' %}
+
+        </div><!-- End .container -->
+    </div><!-- End .header-middle -->
+    {##}
+
+
+</header>

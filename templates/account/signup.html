@@ -1,0 +1,88 @@
+{% extends 'front/_base.html' %}
+{% load i18n %}
+{% load static %}
+{#{% load crispy_forms_tags %}#}
+{% block page_title %}{% trans 'sign up page' %}{% endblock %}
+{% block style %}{% endblock %}
+{% block content %}
+    {% trans 'account' as page_cat %}
+    {% trans 'sign up' as title_page %}
+    {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page modebox='login' %}
+
+
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
+                style="background-image: url('{% static 'front/assets/images/backgrounds/login-bg.jpg' %}')">
+                <div class="container">
+                    <div class="form-box">
+                        <div class="form-tab">
+                            <ul class="nav nav-pills nav-fill" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link  active" id="register-tab-2" data-toggle="tab" href="#register-2" role="tab"
+                                        aria-controls="register-2" aria-selected="true">{% trans 'sign up' %}</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane fade  show active" id="register-2" role="tabpanel" aria-labelledby="register-tab-2">
+                                    <form method="POST" action="{% url 'account_signup' %}" name="signup" >
+                                         {% csrf_token %}
+{% if form.errors %}
+    <div >
+    {% for field in form %}
+        {% for error in field.errors %}
+            <span>{{ field.label }}: {{ error }}</span><br>
+        {% endfor %}
+    {% endfor %}
+    </div>
+{% endif %}
+
+                                        <div class="form-group">
+                                            <label for="register-email-2">آدرس ایمیل *</label>
+                                            <input type="email" class="form-control" id="id_email"
+                                                name="email" required>
+{#                                            {{ form.login }}#}
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-group">
+                                            <label for="register-password-2">رمز عبور *</label>
+                                            <input type="password" class="form-control" id="id_password1"
+                                                name="password1" required>
+{#                                            {{ form.password }}#}
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-group">
+                                            <label for="register-password-2">تکرار رمز عبور *</label>
+                                            <input type="password" class="form-control" autocomplete="new-password" id="id_password2"
+                                                name="password2" required>
+{#                                            {{ form.password }}#}
+                                        </div><!-- End .form-group -->
+
+                                        <div class="form-footer">
+                                            <button type="submit" class="btn btn-outline-primary-2">
+                                                <span>{% trans 'sign up' %}</span>
+                                                <i class="icon-long-arrow-left"></i>
+                                            </button>
+
+                                         </div><!-- End .form-footer -->
+                                    </form>
+                                    <div class="form-choice">
+                                        <p class="text-center">{% trans 'have account?' %}<a  href="{% url 'account_login' %}">{% trans 'login' %}</a></p>
+{#                                        <div class="row">#}
+{#                                            <div class="col-sm-6">#}
+{#                                                <a href="#" class="btn btn-login btn-g">#}
+{#                                                    <i class="icon-google"></i>#}
+{#                                                    حساب کاربری گوگل#}
+{#                                                </a>#}
+{#                                            </div><!-- End .col-6 -->#}
+{#                                             #}
+{#                                        </div><!-- End .row -->#}
+                                    </div><!-- End .form-choice -->
+                                </div><!-- .End .tab-pane -->
+
+                            </div><!-- End .tab-content -->
+                        </div><!-- End .form-tab -->
+                    </div><!-- End .form-box -->
+                </div><!-- End .container -->
+            </div><!-- End .login-page section-bg -->
+
+
+{% endblock %}

@@ -1,1 +1,123 @@
-<h1>home page</h1>
+{% extends 'front/_base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block page_title %}{% trans 'dashboard' %}{% endblock %}
+{% block content %}
+
+
+<div class="card card-style">
+	<div class="content text-center">
+		{% comment %} <img src="images/preload-logo.png" width="120" class="mt-2 mb-3" alt="img"> {% endcomment %}
+		{% comment %} <h6 class="font-700  color-highlight">خوش آمدید</h6> {% endcomment %}
+		<h5 class="color-highlight font-13 mb-0">سیستم مدیریت رزرواسیون سالن های زیبایی</h5>
+		{% comment %} <h1 class="font-700 font-30 pb-2">بیوتی سی ار ام</h1> {% endcomment %}
+		<p class="mb-3">
+			ما در این سیستم برای شما بستری برای مدیریت مشتریان و ارتباط با آنها با ارسال پیامک فراهم کرده ایم
+		</p>
+		<a href="#" class="btn btn-s gradient-highlight shadow-bg shadow-bg-xs">ورود به پنل مدیریت</a>
+	</div>
+</div>
+
+{% comment %} <div> {% endcomment %}
+	<h6 class="font-700 opacity-60 content mb-2">نوار لغزنده تک جعبه - با فلش و نقطه</h6>
+			<div class="splide single-slider slider-dots-under slider-boxed" id="single-slider-1">
+				<div class="splide__track">
+					<div class="splide__list">
+						<div class="splide__slide">
+							<div data-card-height="200" class="card bg-11 rounded-m shadow-l">
+								<div class="card-bottom text-center m-3">
+									<h2 class="color-white font-900 mb-0">زیرنویس اضافه کنید</h2>
+									<p class="under-heading color-white opacity-60 mb-0">زیرنویس ها برای اسلایدرهای تصویر عالی هستند.</p>
+								</div>
+								<div class="card-overlay rounded-m bg-gradient-fade opacity-90"></div>
+							</div>
+						</div>
+						<div class="splide__slide">
+							<div data-card-height="200" class="card bg-23 rounded-m shadow-l">
+								<div class="card-bottom m-3">
+									<h2 class="color-white font-900 mb-0">تراز چپ</h2>
+									<p class="under-heading color-white opacity-60 mb-0">هر جا که به آنها نیاز دارید.</p>
+								</div>
+								<div class="card-overlay rounded-m bg-gradient-fade opacity-90"></div>
+							</div>
+						</div>
+						<div class="splide__slide">
+							<div data-card-height="200" class="card bg-3 rounded-m shadow-l">
+								<div class="card-bottom text-end m-3">
+									<h2 class="color-white font-900 mb-0">تراز راست</h2>
+									<p class="under-heading color-white opacity-60 mb-0">هر جا که به آنها نیاز دارید.</p>
+								</div>
+								<div class="card-overlay rounded-m bg-gradient-fade opacity-90"></div>
+							</div>
+						</div>
+						<div class="splide__slide">
+							<div data-card-height="200" class="card bg-16 rounded-m shadow-l">
+								<div class="card-center text-center m-3">
+									<h2 class="color-white font-900 mb-0">حتی در مرکز</h2>
+									<p class="under-heading color-white opacity-60 mb-3">هر جا که به آنها نیاز دارید.</p>
+								</div>
+								<div class="card-overlay rounded-m bg-gradient-fade opacity-90"></div>
+							</div>
+						</div>
+						<div class="splide__slide">
+							<div data-card-height="200" class="card bg-17 rounded-m shadow-l">
+								<div class="card-top m-2"><i class="bi bi-arrow-up-left color-white font-30"></i></div>
+								<div class="card-top text-center m-2"><i class="bi bi-arrow-up color-white font-30"></i></div>
+								<div class="card-top text-end m-2"><i class="bi bi-arrow-up-right color-white font-30"></i></div>
+								<div class="card-bottom m-2"><i class="bi bi-arrow-down-left color-white font-30"></i></div>
+								<div class="card-bottom text-center m-2"><i class="bi bi-arrow-down color-white font-30"></i></div>
+								<div class="card-bottom text-end m-2"><i class="bi bi-arrow-down-right color-white font-30"></i></div>
+								<div class="card-center text-center"><h2 class="color-white font-900 mb-0">هر موقعیت</h2></div>
+								<div class="card-overlay rounded-m bg-black opacity-60"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="divider mx-3 mt-5 mb-4"></div>
+
+{% comment %} </div> {% endcomment %}
+
+{% comment %} <div class="card card-style shadow-card shadow-card-l bg-23" data-card-height="200">
+	<div class="card-bottom pb-3 px-3">
+		<h3 class="color-white">{% trans 'Yekta Niro Sanat Nikan Tivan' %}</h3>
+		<p class="color-white opacity-70 mb-0 mt-n1">
+			{% blocktrans %}
+			Yekta Niro Sanat Nikan Company (Tivan) with registration number 11789 was established in 2013 and its products are in the field of advanced electrical and electronic protection, automation and intelligentization of various industries, including agriculture, oil and gas, automobile manufacturing, solar power plants, etc. It produces and supplies to the market by using technical knowledge and according to the needs of the consumer.
+            {% endblocktrans %}
+			</p>
+	</div>
+	<div class="card-overlay bg-gradient-fade opacity-80"></div>
+</div> {% endcomment %}
+
+{% comment %} <div class="divider mx-4"></div> {% endcomment %}
+
+<div class="card card-style gradient-green">
+	<div class="content">
+		<h3 class="color-white">{% trans 'last connection to hub modem' %}</h3>
+		<p class="color-white">1403-02-24 12:11:16 ( 1 دقیقه پیش )</p>
+	</div>
+</div>
+
+
+<div class="divider mx-4"></div>
+
+<div class="card card-style py-3">
+	<div class="content px-2 text-center">
+		<h5 class=" font-12 color-highlight font-700">{% trans 'For more information on activities' %} </h5>
+		<h2>{% trans 'Tivan Knowledge Base Company' %}</h2>
+		<p class="mb-3">
+			{% trans 'You can visit our site and contact public relations' %}
+			<!-- می توانید به سایت ما مراجعه کرده و با روابط عمومی در اطتباط باشید -->
+		</p>
+		<a href="https://tivan-co.com/" target="_blank" class="default-link btn btn-m rounded-s gradient-highlight shadow-bg shadow-bg-s px-5 mb-0 mt-2">{% trans 'visit' %}</a>
+	</div>
+</div>
+
+          {% comment %} {% trans 'account' as page_cat %}
+        {% trans 'dashboard' as title_page %}
+        {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}  {% endcomment %}
+
+
+{% endblock %}

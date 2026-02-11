@@ -1,0 +1,44 @@
+{% load i18n %}
+{#<aside class="col-md-4 col-lg-3">#}
+<aside class="col-md-3 col-lg-2">
+    <ul class="nav nav-dashboard flex-column mb-3 mb-md-0" role="tablist">
+        <li class="nav-item">
+            {#                                        <a class="nav-link " id="tab-dashboard-link" data-toggle="tab"#}
+            {#                                            href="{% url 'dashboard' %}" role="tab" aria-controls="tab-dashboard"#}
+            {#                                            aria-selected="true">داشبورد</a>#}
+            <a class="nav-link {% if  request.path == '/accounts/dashboard/' %}active{% endif %}" id="tab-dashboard-link"
+               href="{% url 'dashboard' %}" aria-controls="tab-dashboard"
+               aria-selected="true">{% trans 'dashboard' %}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if  request.path == '/accounts/password/change/' %}active{% endif %}" id="tab-account-link" href="{% url 'account_change_password' %}"
+               aria-controls="tab-change_password" aria-selected="false">{% trans 'change password' %}</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link {% if  request.path == '/accounts/info/' %}active{% endif %}" id="tab-info-link" href="{% url 'change_info' %}"
+               aria-controls="tab-info" aria-selected="false">{% trans 'personal info' %}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link {% if  request.path == '/orders/list/' %}active{% endif %}" id="tab-downloads-link"
+               href="{% url 'order_list' %}" role="tab" aria-controls="tab-downloads"
+               aria-selected="false">{% trans 'order list' %}</a>
+        </li>
+        <li class="nav-item">
+
+            <a class="nav-link {% if  request.path == '/payment/list/' %}active{% endif %}" id="tab-downloads-link"
+               href="{% url 'payment:payment_list' %}" role="tab" aria-controls="tab-downloads"
+               aria-selected="false">{% trans 'payment list' %}</a>
+        </li>
+
+        <li class="nav-item ">
+            <a class="nav-link {% if  request.path == '/ticket/list/' %}active{% endif %}" id="tab-downloads-link"
+               href="{% url 'ticket_list' %}" role="tab" aria-controls="tab-downloads"
+               aria-selected="false">{% trans 'ticket' %}</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'account_logout' %}">{% trans 'log out' %}</a>
+        </li>
+    </ul>
+</aside><!-- End .col-lg-3 -->

@@ -1,0 +1,15 @@
+<ul>
+    {#    {% for cat in category_data %}#}
+    {#        <li>{{ cat }}  :: {{ cat.slug }}</li>#}
+    {#    {% endfor %}#}
+    {% for cat in category_data %}
+        {% if cat.parent == None %}
+            <li>{{ cat }} :: {{ cat.slug }}
+
+                {% if cat.children.active %}
+                    {% include 'blog/partials/category_loop.html' %}
+                {% endif %}
+            </li>
+        {% endif %}
+    {% endfor %}
+</ul>

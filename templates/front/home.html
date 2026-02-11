@@ -1,0 +1,48 @@
+{% extends 'front/_home_base.html' %}
+{% load home_page %}
+{% load i18n %}
+{% block page_title %}
+    {% trans 'home page' %}
+{% endblock %}
+
+
+{% block content %}
+
+    <!--start .main-->
+    <main class="main">
+        {#   slider    #}
+        {% home_slider %}
+        {#        {% include 'front/partials/home_slider.html' %}#}
+
+
+        <div class="container">
+            {% home_support_slider %}
+            {#            {% include 'front/partials/home_support_slider.html' %}#}
+
+
+            {% home_category_banner %}
+            {#            {% include 'front/partials/home_category_banner.html' %}#}
+            {% home_newest_product %}
+            {#            {% include 'front/partials/home_newest_product.html' %}#}
+
+            {% home_customer_reviews %}
+            {#            {% include 'front/partials/home_customer_rewiew.html' %}#}
+
+            {% home_aboutus %}
+            {#            {% include 'front/partials/home_aboutus.html' %}#}
+
+
+        </div>
+        <!--End .container-->
+
+{% home_gallery %}
+{#        {% include 'front/partials/home_gallery.html' %}#}
+
+
+        <!--End .container-->
+    </main>
+    <!--End .main-->
+
+    <!-- Sign in / Register Modal -->
+
+{% endblock %}

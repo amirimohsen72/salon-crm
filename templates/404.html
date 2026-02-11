@@ -1,0 +1,35 @@
+{% extends 'front/_base.html' %}
+{% load i18n %}
+{% load static %}
+{#{% load crispy_forms_tags %}#}
+{% block page_title %}{% trans '404 - page not found' %}{% endblock %}
+{% block googlemeta %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+{% block content %}
+
+
+        <main class="main">
+
+    {% trans 'error' as page_cat %}
+    {% trans '404' as title_page %}
+    {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page modebox='nobox' %}
+
+            <div class="error-content text-center"
+                style="background-image: url('{% static 'front/assets/images/backgrounds/error-bg.jpg' %}')" >
+                <div class="container">
+                    <h1 class="error-title">{% trans 'Error 404' %}</h1><!-- End .error-title -->
+                    <p class="text-center">{% trans 'Unfortunately, the page you are looking for does not exist on the site' %}</p>
+                    <a href="{% url 'home' %}" class="btn btn-outline-primary-2 btn-minwidth-lg">
+                        <span>{% trans 'go to home' %}</span>
+                        <i class="icon-long-arrow-left"></i>
+                    </a>
+                </div><!-- End .container -->
+            </div><!-- End .error-content text-center -->
+        </main><!-- End .main -->
+
+
+
+
+{% endblock %}

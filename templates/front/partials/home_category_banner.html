@@ -1,0 +1,84 @@
+{% load i18n %}
+{% if slides %}
+<div class="banner-group banner-group-1">
+    <div class="grid row">
+        {% if slides.slide0 %}
+            <div class="grid-item col-lg-6 height-x1">
+                <figure class="banner banner-overlay banner-1" style="background-color: #0e3323">
+                    {% if slides.slide0.image %}
+                        <a>
+                            <img src="{{ slides.slide0.image.url }}" alt="Banner" width="690"
+                                 height="340">
+                        </a>
+                    {% endif %}
+
+                    <div class="banner-content">
+                        <h3 class="banner-title">{{ slides.slide0.title }}</h3>
+                        <p class="text-white">{{ slides.slide0.description|safe|striptags }}</p>
+                        {% if slides.slide0.link %}
+                            <a href="{{ slides.slide0.link }}" class="btn btn-outline-white">{% trans 'see more' %}</a>
+
+                        {% endif %}
+                    </div>
+                    <!--End .banner-content-->
+                </figure>
+                <!--End .banner-->
+            </div>
+            <!--End .grid-item-->
+        {% endif %}
+        {% if slides.slide1 %}
+            <div class="grid-item col-sm-6 col-lg-6 height-x2">
+                <figure class="banner banner-overlay banner-3" style="background-color: #807474;">
+                    {% if slides.slide1.image %}
+                        <a>
+                            <img src="{{ slides.slide1.image.url }}" alt="Banner" width="690"
+                                 height="700">
+                        </a>
+                    {% endif %}
+
+                    <div class="banner-content">
+                        <h3 class="banner-subtitle">{{ slides.slide1.title }}</h3>
+                        <h4 class="banner-title">{{ slides.slide1.description|safe|striptags }}</h4>
+                        {% if slides.slide1.link %}
+                            <a href="{{ slides.slide1.link }}" class="btn btn-outline-white">{% trans 'see more' %}</a>
+
+                        {% endif %}
+                    </div>
+                    <!--End .banner-content-->
+                </figure>
+                <!--End .banner-->
+            </div>
+            <!--End .grid-item-->
+        {% endif %}
+        {% if slides.slide2 %}
+            {% for slide in slides.slide2 %}
+
+            <div class="grid-item col-sm-6 col-lg-3 height-x1">
+                <figure class="banner banner-overlay banner-2" style="background-color: #855542;">
+                    {% if slide.image %}
+                        <a href="#">
+                            <img src="{{ slide.image.url }}" alt="Banner" width="335"
+                                 height="340">
+                        </a>
+                    {% endif %}
+
+                    <div class="banner-content">
+                        <h3 class="banner-subtitle">{{ slide.title }}</h3>
+                        <h4 class="banner-title">{{ slide.description|safe|striptags }}</h4>
+                        {% if slide.link %}
+                            <a href="{{ slide.link }}" class="btn btn-outline-white">{% trans 'see more' %}</a>
+
+                        {% endif %}
+                    </div>
+                    <!--End .banner-content-->
+                </figure>
+            </div>
+            {% endfor %}
+            <!--End .grid-item-->
+        {% endif %}
+        <div class="grid-space col-1"></div>
+    </div>
+    <!--End .grid-->
+</div>
+<!--End .banner-group-1-->
+{% endif %}

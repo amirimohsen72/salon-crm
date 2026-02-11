@@ -1,0 +1,111 @@
+{% load static %}
+{% load i18n %}
+<html lang="fa"  dir="rtl">
+<head>
+    <!-- <meta charset="UTF-8"> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    
+
+    <title>{% block page_title %}{% trans 'tivan smart device' %}{% endblock %}</title>
+
+{% block googlemeta %}
+    {# seo #}
+    <!-- <meta name="keywords" content="پنل"> -->
+    <meta name="description" content="پنل کاربری سامانه مدیریت دستگاه های تیوان">
+{% endblock %}
+
+<meta id="theme-check" name="theme-color" content="#FFFFFF">
+<link rel="apple-touch-icon" sizes="180x180" href="{% static 'front/assets/app/icons/icon-192x192.png' %}">
+
+    <meta name="apple-mobile-web-app-title" content="{% trans 'tivan smart device' %}">
+
+
+    <!-- ************************* CSS Files ************************* -->
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" type="text/css" href="{% static 'front/assets/styles/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/assets/fonts/bootstrap-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/assets/styles/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'front/assets/styles/custom.css' %}">
+    {% comment %} <link rel="manifest" href="{% static 'front/assets/_manifest.json' %}"> {% endcomment %}
+
+{% block style %}
+    <!-- استایل های اختصاصی برای صفحه -->
+{% endblock %}
+
+{% comment %} <!-- تغییرات استایل دستی -->
+<link rel="stylesheet" href="{% static 'front/assets/styles/customize.css' %}">
+<link rel="stylesheet" href="{% static 'front/assets/styles/newstyle.css' %}"> {% endcomment %}
+
+
+    <!-- ************************* webfont config ************************* -->
+ 
+
+</head>
+<body class="theme-light">
+<!-- Preloader Start -->
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+<!-- Preloader End -->
+
+<div id="page">
+
+    <!-- Header -->
+    <div class="header-bar header-fixed header-app header-bar-detached">
+		<!-- <a data-back-button href="#"><i class="bi bi-caret-right-fill font-11 color-theme ps-2"></i></a> -->
+		<a href="#" class="header-title color-theme font-13"></a>
+		<a data-bs-toggle="offcanvas" data-bs-target="#menu-color" href="#"><i class="bi bi-palette-fill font-13 color-highlight"></i></a>
+		<a href="#" class="show-on-theme-light" data-toggle-theme><i class="bi bi-moon-fill font-13"></i></a>
+		<a href="#" class="show-on-theme-dark" data-toggle-theme ><i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i></a>
+	</div>
+
+	<!-- Footer Bar-->
+    {% include 'front/footer.html' %}
+
+   
+
+	<!-- Main Sidebar-->
+	{% comment %} <div id="menu-main" data-menu-active="nav-comps" data-menu-load="menu-main.html"
+		style="width:280px;" class="offcanvas offcanvas-end offcanvas-detached rounded-m">
+	</div>
+	<!-- Menu Highlights-->
+	<div id="menu-color" data-menu-load="menu-highlights.html"
+		style="height:340px" class="offcanvas offcanvas-bottom offcanvas-detached rounded-m">
+	</div> {% endcomment %}
+
+    <!-- Your Page Content Goes Here-->
+    <div class="page-content header-clear-medium">
+		 
+
+        {% if messages %}
+        <div class="container">
+            <div class="messages">
+                {% for message in messages %}
+                    <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+        {% block content %}
+
+		
+
+        {% endblock %}
+    </div>
+	<!-- End of Page Content-->
+</div>
+<!--End of Page ID-->
+
+<!-- ************************* JS Files ************************* -->
+<!-- Plugins JS File -->
+<script src="{% static 'front/assets/scripts/bootstrap.min.js' %}"></script>
+<script src="{% static 'front/assets/scripts/custom.js' %}"></script>
+
+{% block jssection %}
+{% endblock %}
+
+</body>
+</html>

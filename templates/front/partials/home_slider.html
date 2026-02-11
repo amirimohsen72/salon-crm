@@ -1,0 +1,48 @@
+{% load i18n %}
+{% if slider %}
+<div class="intro-slider-container"
+
+     style="background-image: url({#     {% if slider.0.category.image %}{{ slider.0.category.image.url }}{% endif %}#}); background-color: #aedef7;">
+    <div class="intro-slider-wrapper">
+        <div class="container">
+            <div class="intro-slider owl-carousel owl-theme rows cols-1" data-toggle="owl"
+                 data-owl-options='{
+                            "dots": false,
+                            "nav": false,
+                            "rtl": true,
+                            "responsive": {
+                                "992": {
+
+                                }
+                            }
+                        }'>
+
+                {% for slide in slider %}
+                    <div class="intro-slide"
+                         style="background-image: url({{ slide.image.url }}); background-color: #39c;">
+                        <div class="intro-content text-center">
+                            <h1 class="intro-title text-white">{{ slide.title }}</h1>
+                            <!-- End .h3 intro-subtitle -->
+                            <h3 class="intro-text text-white font-weight-normal">{{ slide.description|safe }}</h3>
+                            <!-- End .intro-title -->
+
+                            {% if slide.link %}
+                            <a href="{{  slide.link }}" class="btn btn-secondary font-weight-semibold">
+                                <span>{% trans 'view more detail' %}</span>
+                            </a>
+                            {% endif %}
+                        </div>
+                        <!--End .intro-content-->
+                    </div><!-- End .intro-slide -->
+                {% endfor %}
+
+            </div><!-- End .intro-slider owl-carousel owl-theme -->
+
+            <span class="slider-loader"></span><!-- End .slider-loader -->
+        </div>
+        <!--End .container-->
+    </div>
+    <!--End .intro-slider-wrapper-->
+</div>
+<!--End .intro-slider-container-->
+{% endif %}

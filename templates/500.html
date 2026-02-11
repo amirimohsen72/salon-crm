@@ -1,0 +1,123 @@
+{#{% extends 'front/_base.html' %}#}
+{% load i18n %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% trans '500 - server error' %}</title>
+
+{#    <meta name="keywords" content="HTML5 Template">#}
+{#    <meta name="description" content="{{ site_info.google_desc_meta }}">#}
+    <meta name="robots" content="noindex, nofollow">
+
+
+    {#favicon#}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'front/assets/images/icons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'front/assets/images/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'front/assets/images/icons/favicon-16x16.png' %}">
+{#    <link rel="shortcut icon" href="{% static 'front/assets/images/icons/favicon.ico' %}">#}
+{#    <link rel="manifest" href="{% static 'front/assets/images/icons/site.webmanifest' %}">#}
+    <link rel="mask-icon" href="{% static 'front/assets/images/icons/safari-pinned-tab.html' %}" color="#666666">
+    <link rel="shortcut icon" href="{% if site_info.favicon %}{{ site_info.favicon.url }}{% else %}{% static 'assets/images/favicon.ico' %}{% endif %}">
+    <link rel="stylesheet" href="{% static 'front/assets/vendor/font-awesome/css/all.min.css' %}">
+
+    {#theme a detail#}
+    <meta name="apple-mobile-web-app-title" content="{{ site_info.title }}">
+{#    <meta name="application-name" content="Molla">#}
+{#    <meta name="msapplication-TileColor" content="#cc9966">#}
+{#    <meta name="msapplication-config" content="{% static 'front/assets/images/icons/browserconfig.html' %}">#}
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ************************* CSS Files ************************* -->
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap-rtl.min.css' %}">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'front/assets/css/style.css' %}">
+
+{#    <link rel="stylesheet" href="{% static 'front/assets/css/plugins/owl-carousel/owl.carousel.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'front/assets/css/plugins/magnific-popup/magnific-popup.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'front/assets/css/plugins/jquery.countdown.css' %}">#}
+{#    <link rel="stylesheet" href="{% static 'front/assets/css/demos/demo-31.css' %}">#}
+    <link rel="stylesheet" href="{% static 'front/assets/css/customstyle.css' %}">
+
+
+<link rel="stylesheet" href="{% static 'front/assets/css/newstyle.css' %}">
+
+</head>
+<body dir='rtl'>
+
+
+<!-- Main Wrapper Start -->
+<div class="page-wrapper">
+
+    {#header#}
+{#    {% include 'front/partials/navbar.html' %}#}
+
+
+    {% if messages %}
+        <div class="container">
+            <div class="messages">
+                {% for message in messages %}
+                    <div {% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+        <main class="main">
+
+    {% trans 'error' as page_cat %}
+    {% trans '500' as title_page %}
+    {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page modebox='nobox' %}
+
+            <div class="error-content text-center"
+                style="background-image: url('{% static 'front/assets/images/backgrounds/error-bg.jpg' %}')" >
+                <div class="container">
+                    <h1 class="error-title">{% trans 'Error 500' %}</h1><!-- End .error-title -->
+                    <p class="text-center">{% trans 'Unfortunately, the server is unable to respond to your request' %}</p>
+                    <a href="{% url 'home' %}" class="btn btn-outline-primary-2 btn-minwidth-lg">
+                        <span>{% trans 'go to home' %}</span>
+                        <i class="icon-long-arrow-left"></i>
+                    </a>
+                </div><!-- End .container -->
+            </div><!-- End .error-content text-center -->
+        </main><!-- End .main -->
+
+
+{#    {% include 'front/footer.html' %}#}
+
+</div>
+
+
+<button id="scroll-top" title="{% trans 'go to top' %}"><i class="icon-arrow-up"></i></button>
+
+{#{% include 'front/partials/navbar_mobile.html' %}#}
+
+<!-- Main Wrapper End -->
+
+<!-- ************************* JS Files ************************* -->
+<!-- Plugins JS File -->
+<script src="{% static 'front/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'front/assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.hoverIntent.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'front/assets/js/superfish.min.js' %}"></script>
+<script src="{% static 'front/assets/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.plugin.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.countdown.min.js' %}"></script>
+<script src="{% static 'front/assets/js/imagesloaded.pkgd.min.js' %}"></script>
+<script src="{% static 'front/assets/js/isotope.pkgd.min.js' %}"></script>
+<!-- Main JS File -->
+<script src="{% static 'front/assets/js/main.js' %}"></script>
+{#<script src="{% static 'front/assets/js/demos/demo-31.js' %}"></script>#}
+
+
+</body>
+</html>

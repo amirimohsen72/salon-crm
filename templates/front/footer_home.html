@@ -1,0 +1,104 @@
+{% load static %}
+{% load i18n %}
+{% load main_tags %}
+
+<!-- Footer Start-->
+<footer class="footer">
+
+    <!--End .footer-top-->
+
+    <div class="container">
+        <div class="footer-middle pt-5">
+            <div class="row">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="widget widget-about">
+                        <h3 class="widget-title text-white font-weight-normal">{% trans 'about us' %}</h3>
+                        <p class="font-weight-normal">{{ site_info.footer_description|safe }}</p>
+
+                        <div class="social-icons">
+                            {% if site_info.mobile %}
+                                <a href="{{ site_info.mobile }}" class="social-icon" title="{% trans 'mobile' %}" target="_blank"><i
+                                        class="icon-mobile-alt"></i></a>
+                            {% endif %}
+                            {% if site_info.tel_phone %}
+                                <a href="{{ site_info.tel_phone }}" class="social-icon" title="{% trans 'phone' %}" target="_blank"><i
+                                        class="icon-phone"></i></a>{% endif %}
+                            {% if site_info.instagram %}
+                                <a href="{{ site_info.instagram }}" class="social-icon" title="{% trans 'instagram' %}"
+                                   target="_blank"><i
+                                        class="icon-instagram"></i></a>{% endif %}
+                            {% if site_info.email %}
+                                <a href="{{ site_info.email }}" class="social-icon" title="{% trans 'email' %}" target="_blank"><i
+                                        class="icon-envelope"></i></a>{% endif %}
+                        </div><!-- End .soial-icons -->
+                    </div><!-- End .widget about-widget -->
+                </div><!-- End .col-sm-6 col-lg-3 -->
+
+                {% if footer_menu %}
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="widget">
+                            <h4 class="widget-title text-white font-weight-normal">{{ footer_menu.0.category__title }}</h4>
+                            <!-- End .widget-title -->
+
+                            <ul class="widget-list">
+                                {% for menu in footer_menu %}
+                                    <li><a href="{{ menu.url|menu_creator:menu.internal_url  }}">{{ menu.title }}</a></li>
+
+                                {% endfor %}
+                            </ul><!-- End .widget-list -->
+                        </div><!-- End .widget -->
+                    </div><!-- End .col-sm-6 col-lg-3 -->
+                {% endif %}
+
+                {% if footer_menu2 %}
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="widget">
+                            <h4 class="widget-title text-white font-weight-normal">{{ footer_menu2.0.category__title }}</h4>
+                            <!-- End .widget-title -->
+
+                            <ul class="widget-list">
+                                {% for menu in footer_menu2 %}
+                                <li><a href="{{ menu.url|menu_creator:menu.internal_url  }}">{{ menu.title }}</a></li>
+                            {% endfor %}
+                            </ul><!-- End .widget-list -->
+                        </div><!-- End .widget -->
+                    </div><!-- End .col-sm-6 col-lg-3 -->
+                {% endif %}
+                {% if footer_menu3 %}
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="widget">
+                            <h4 class="widget-title text-white font-weight-normal">{{ footer_menu3.0.category__title }}</h4>
+                            <!-- End .widget-title -->
+
+                            <ul class="widget-list">
+                                {% for menu in footer_menu3 %}
+                                <li><a href="{{ menu.url|menu_creator:menu.internal_url  }}">{{ menu.title }}</a></li>
+                            {% endfor %}
+                            </ul><!-- End .widget-list -->
+                        </div><!-- End .widget -->
+                    </div><!-- End .col-sm-6 col-lg-3 -->
+                {% endif %}
+            </div><!-- End .row -->
+        </div>
+        <!--End .footer-middle-->
+
+        <div class="footer-bottom pb-3">
+
+            <!--End .footer-payments-->
+
+            {% if site_info.logo2 %}
+                <figure class="footer-logo mb-4">
+                    <img src="{{ site_info.logo2.url }}" alt="{{ site_info.title }}" width="111"
+                         height="105" class="footer-logo">
+                </figure>
+            {% endif %}
+            <!--End .footer-logo-->
+
+            <p class="footer-cotyright font-weight-normal">{{ site_info.footer_copyright }}
+            </p>
+        </div>
+        <!--End .footer-bottom-->
+    </div>
+    <!--End .container-->
+</footer>
+<!-- Footer End-->

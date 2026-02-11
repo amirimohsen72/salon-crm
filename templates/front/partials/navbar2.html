@@ -1,0 +1,89 @@
+{% load i18n %}
+{% load static %}
+{% load main_tags %}
+{#{{ site_info.title }}#}
+
+
+<header class="header">
+    {#            <div class="header-top">#}
+    {#                <div class="container">#}
+    {#                    <div class="header-left">#}
+    {##}
+    {#                        <div class="header-dropdown">#}
+    {#                            <a href="#">فارسی</a>#}
+    {#                            <div class="header-menu">#}
+    {#                                <ul>#}
+    {#                                    <li><a href="#">انگلیسی</a></li>#}
+    {#                                    <li><a href="#">فرانسوی</a></li>#}
+    {#                                </ul>#}
+    {#                            </div><!-- End .header-menu -->#}
+    {#                        </div><!-- End .header-dropdown -->#}
+    {#                    </div><!-- End .header-left -->#}
+    {##}
+    {#                    <div class="header-right">#}
+    {#                        <ul class="top-menu">#}
+    {#                            <li>#}
+    {#                                <a href="#">لینک ها</a>#}
+    {#                                <ul>#}
+    {#                                    <li><a href="tel_3A.html#"><i class="icon-phone"></i>تلفن تماس : 02155667788</a></li>#}
+    {#                                    <li><a href="wishlist.html"><i class="icon-heart-o"></i>لیست علاقه مندی#}
+    {#                                            <span>(3)</span></a></li>#}
+    {#                                    <li><a href="about.html">درباره ما</a></li>#}
+    {#                                    <li><a href="contact.html">تماس با ما</a></li>#}
+    {#                                    </li>#}
+    {#                                </ul>#}
+    {#                            </li>#}
+    {#                        </ul><!-- End .top-menu -->#}
+    {#                    </div><!-- End .header-right -->#}
+    {#                </div><!-- End .container -->#}
+    {#            </div><!-- End .header-top -->#}
+
+    <div class="header-middle sticky-header">
+        <div class="container">
+            <div class="header-left">
+                <button class="mobile-menu-toggler">
+                    <span class="sr-only">{% trans 'contents' %}</span>
+                    <i class="icon-bars"></i>
+                </button>
+
+                <a href="{% url 'home' %}" class="logo">
+
+                    {% if site_info.site_logo %}
+                        <img src="{{ site_info.site_logo.url }}" alt="{{ site_info.title }}"
+                             width="105"
+                             height="25"
+                        >
+                    {% endif %}
+                    {#                            <img src="{assets/images/logo.png}" alt="Molla Logo" width="105" height="25">#}
+                </a>
+
+                <nav class="main-nav">
+                    <ul class="menu sf-arrows">
+                        {% for cat in topmenu %}
+
+                            {#            {% if cat.parent == None %}#}
+                            <li>
+                                <a href="{{ cat.url|menu_creator:cat.internal_url }}" {% if cat.children.all %} class="sf-with-ul"{% endif %}>
+                                    {{ cat.title }}
+                                </a>
+                                {% if cat.children.all %}
+                                    {% include 'front/partials/category_loop.html' %}
+                                {% endif %}
+                            </li>
+                            {#            {% endif %}#}
+                            {#{% url 'product_list' %}#}
+                            {#                        {% if url menu.url %}{% endif %}#}
+
+
+                        {% endfor %}
+
+
+                    </ul><!-- End .menu -->
+                </nav><!-- End .main-nav -->
+            </div><!-- End .header-left -->
+
+            {% include 'shop/navcart_box.html' %}
+
+        </div><!-- End .container -->
+    </div><!-- End .header-middle -->
+</header><!-- End .header -->

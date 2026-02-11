@@ -1,0 +1,79 @@
+{% load static %}
+{% load i18n %}
+<html lang="en"  dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block page_title %}{{ site_info.title }}{% trans 'print factor' %}{% endblock %}</title>
+
+{% block googlemeta %}
+    {# seo #}
+    <META NAME="robots" CONTENT="noindex,nofollow">
+{% endblock %}
+
+    {#favicon#}
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'front/assets/images/icons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'front/assets/images/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'front/assets/images/icons/favicon-16x16.png' %}">
+{#    <link rel="shortcut icon" href="{% static 'front/assets/images/icons/favicon.ico' %}">#}
+{#    <link rel="manifest" href="{% static 'front/assets/images/icons/site.webmanifest' %}">#}
+    <link rel="mask-icon" href="{% static 'front/assets/images/icons/safari-pinned-tab.html' %}" color="#666666">
+    <link rel="shortcut icon" href="{% if site_info.favicon %}{{ site_info.favicon.url }}{% else %}{% static 'assets/images/favicon.ico' %}{% endif %}">
+    <link rel="stylesheet" href="{% static 'front/assets/vendor/font-awesome/css/all.min.css' %}">
+
+    {#theme a detail#}
+    <meta name="apple-mobile-web-app-title" content="{{ site_info.title }}">
+{#    <meta name="application-name" content="Molla">#}
+{#    <meta name="msapplication-TileColor" content="#cc9966">#}
+{#    <meta name="msapplication-config" content="{% static 'front/assets/images/icons/browserconfig.html' %}">#}
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ************************* CSS Files ************************* -->
+
+    <!-- Plugins CSS File -->
+    <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'front/assets/css/bootstrap-rtl.min.css' %}">
+
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="{% static 'front/assets/css/style.css' %}">
+
+{% block style %}
+
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'front/assets/css/newstyle.css' %}">
+
+<link rel="stylesheet" href="{% static 'front/assets/css/mystyle.css' %}">
+
+
+
+</head>
+<body dir='rtl'>
+
+
+{% block content %}
+{% endblock %}
+
+<!-- ************************* JS Files ************************* -->
+<!-- Plugins JS File -->
+<script src="{% static 'front/assets/js/jquery.min.js' %}"></script>
+<script src="{% static 'front/assets/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.hoverIntent.min.js' %}"></script>
+<script src="{% static 'front/assets/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'front/assets/js/superfish.min.js' %}"></script>
+<script src="{% static 'front/assets/js/owl.carousel.min.js' %}"></script>
+{#<script src="{% static 'front/assets/js/jquery.plugin.min.js' %}"></script>#}
+{#<script src="{% static 'front/assets/js/jquery.magnific-popup.min.js' %}"></script>#}
+{#<script src="{% static 'front/assets/js/jquery.countdown.min.js' %}"></script>#}
+{#<script src="{% static 'front/assets/js/imagesloaded.pkgd.min.js' %}"></script>#}
+{#<script src="{% static 'front/assets/js/isotope.pkgd.min.js' %}"></script>#}
+
+<!-- Main JS File -->
+<script src="{% static 'front/assets/js/main.js' %}"></script>
+
+{% block jssection %}
+{% endblock %}
+</body>
+</html>

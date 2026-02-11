@@ -1,0 +1,50 @@
+{% load i18n %}
+{% if dailymsg %}
+    <hr class="mt-4 mb-6">
+
+    <div class="heading heading-testimonial text-center mt-4">
+        <h3 class="text-secondary">{% trans 'reviews' %}</h3>
+        <h6>{{ desc }}</h6>
+    </div>
+    <!--End .heading-->
+
+    <div class="row testimonials mb-7">
+        <div class="col-sm-9 col-md-10 col-lg-10">
+            <div class="owl-carousel owl-simple owl-testimonial" data-toggle="owl" data-owl-options='{
+                            "nav": false,
+                            "dots": true,
+                            "rtl": true,
+                            "responsive": {
+                                "992": {
+                                    "nav": true
+                                }
+                            }
+                        }'>
+
+                {% for dailymsg in dailymsg %}
+                    <div class="testimonial">
+                        <figure class="avatar">
+                            {% if dailymsg.image %}
+                                <img src="{{ dailymsg.image.url }}" width="150"
+                                     height="151">
+                            {% endif %}
+                        </figure>
+                        <!--End .avatar-->
+
+                        <div class="comment">
+                            <p>{{ dailymsg.description|striptags }}
+                            </p>
+                        </div>
+                        <!--End .comment-->
+
+                        <div class="commenter">{{ dailymsg.customer_name }}</div>
+                    </div>
+                    <!--End .testimonial-->
+                {% endfor %}
+
+
+            </div><!-- End .owl-carousel -->
+        </div>
+    </div>
+    <!--End .testimonials-->
+{% endif %}

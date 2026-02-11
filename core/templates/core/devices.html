@@ -1,0 +1,140 @@
+{% extends 'front/_base.html' %}
+{% load i18n %}
+{% load humanize %}
+{% block page_title %}{% trans 'dashboard' %}{% endblock %}
+{% block content %}
+
+
+ {% comment %} {% for hub in hubs %} {% endcomment %}
+        {% comment %} <h2>Hub: {{ hub.hub_iemi }}</h2> {% endcomment %}
+        {% if device_types %}
+                {% for device in device_types %}
+                    {% comment %} <li>Device Type: {{ device_type.device_type }} - Number of devices: {{ device_type.count }}</li> {% endcomment %}
+            
+
+            {% if device.device_type == '1' %}
+            <a href="{% url "devices1" %}">
+                <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+                    <div class="card-top">
+                        <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">{% trans "sensors" %}</span>
+                    </div>
+                    <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+                        <h4 class="font-500 font-16">
+                            {% trans "sensors" %}
+                        </h4>
+                        {% comment %} <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span> {% endcomment %}
+                    </div>
+                </div>
+            </a>
+            {% elif device.device_type == '2' %}
+            <a href="{% url "devices2" %}">
+                <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+                    <div class="card-top">
+                        <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">{% trans "tb120" %}</span>
+                    </div>
+                    <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+                        <h4 class="font-500 font-16">
+                            {% trans "tb120 device" %}
+                        </h4>
+                        {% comment %} <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span> {% endcomment %}
+                    </div>
+                </div>
+            </a>
+            {% elif device.device_type == '3' %}
+            <a href="{% url "devices3" %}">
+                <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+                    <div class="card-top">
+                        <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">{% trans "tb130" %}</span>
+                    </div>
+                    <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+                        <h4 class="font-500 font-16">
+                            {% trans "tb130 device" %}
+                        </h4>
+                        {% comment %} <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span> {% endcomment %}
+                    </div>
+                </div>
+            </a>
+            {% elif device.device_type == '4' %}
+            <a href="{% url "devices4" %}">
+                <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+                    <div class="card-top">
+                        <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">{% trans "tb130" %}</span>
+                    </div>
+                    <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+                        <h4 class="font-500 font-16">
+                            {% trans "tb130 device" %}
+                        </h4>
+                        {% comment %} <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span> {% endcomment %}
+                    </div>
+                </div>
+            </a>
+            {% elif device.device_type == '5' %}
+
+            <a href="{% url "devices5" %}">
+                <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+                    <div class="card-top">
+                        <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">{% trans "tb130" %}</span>
+                    </div>
+                    <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+                        <h4 class="font-500 font-16">
+                            {% trans "tb130 device" %}
+                        </h4>
+                        {% comment %} <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span> {% endcomment %}
+                    </div>
+                </div>
+            </a>
+            {% endif %}
+
+
+
+            {% endfor %}
+            
+
+        {% else %}
+            <p>No devices connected to this hub.</p>
+        {% endif %}
+    {% comment %} {% endfor %} {% endcomment %}
+{% comment %} {% for device in devices %}
+<a href="device_2.html">
+    <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+        <div class="card-top">
+            <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">استابلایزر</span>
+        </div>
+        <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+            <h4 class="font-500 font-16">
+                {{ device.connected_device.device_type }}
+            </h4>
+            <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span>
+        </div>
+    </div>
+</a>
+{% endfor %} {% endcomment %}
+{% comment %} <a href="device_2.html">
+    <div class="card card-style  "  style="background-image: url('images/tivan/tvs12000_croped2.jpg');" data-card-height="230">
+        <div class="card-top">
+            <span class="badge gradient-brown shadow-bg shadow-bg-s color-white px-2 py-2 m-3 float-start rounded-xxs">استابلایزر</span>
+        </div>
+        <div class="card-bottom bg-white m-3 p-3 rounded-s shadow opacity-70">
+            <h4 class="font-500 font-16">
+                دستگاه های استابلایزر
+            </h4>
+            <span class="opacity-50 font-10 d-block ">شامل دستگاه های tvs12000 , tvs10000 , tvs15000,tvs22000 , tvs8000</span>
+        </div>
+    </div>
+</a> {% endcomment %}
+
+
+
+<div class="divider mx-4"></div>
+ 
+
+
+<div class="divider mx-4"></div>
+ 
+
+          {% comment %} {% trans 'account' as page_cat %}
+        {% trans 'dashboard' as title_page %}
+        {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}  {% endcomment %}
+
+
+{% endblock %}

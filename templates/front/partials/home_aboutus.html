@@ -1,0 +1,18 @@
+
+{% load static %}
+{% if about %}
+        <div class="banner-big"
+             style="background-image: url({% if about.cover %}{{ about.cover.url }}{% endif %}); background-color: #f1f5f7;">
+            <div class="banner-content">
+                <div class="banner-subtitle text-secondary">{{ desc }}</div>
+                <div class="banner-title text-secondary mb-3">{{ about.title}}</div>
+                <figure class="wave-img">
+                    <img src="{% static 'front/assets/images/demos/demo-31/wave.png' %}" width="76" height="9">
+                </figure>
+                <p class="font-weight-normal mt-3">{{ about.description|safe}}</p>
+{#                <a href="#" class="btn btn-secondary">خرید وسایل یوگا</a>#}
+            </div>
+            <!--End .banner-content-->
+        </div>
+        <!--End .banner-big-->
+{% endif %}

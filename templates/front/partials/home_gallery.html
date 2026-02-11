@@ -1,0 +1,50 @@
+{% if galleries %}
+<div class="container">
+
+    <hr class="mt-6">
+
+    <div class="heading heading-instagram text-center mt-5 mb-5">
+        <h3 class="text-secondary">{{ title }}</h3>
+        <h6>{{ desc }}</h6>
+    </div>
+    <!--End .heading-->
+
+    <div class="owl-carousel owl-simple owl-instagram" data-toggle="owl" data-owl-options='{
+                        "nav": false,
+                        "dots": false,
+                        "margin": 20,
+                        "loop": false,
+                        "rtl": true,
+                            "responsive": {
+                            "0": {
+                                "items":2
+                            },
+                            "576": {
+                                "items":2
+                            },
+                            "768": {
+                                "items":3
+                            },
+                            "992": {
+                                "items":4
+                            },
+                            "1200": {
+                                "items":5
+                            }
+                        }
+                    }'>
+
+        {% for gallery in galleries %}
+            <figure class="instagram-feed">
+                {% if gallery.image %}
+                    <img src="{{ gallery.image.url }}" alt="{{ gallery.title }}" width="264" height="264">
+                {% endif %}
+                <div class="instagram-feed-content">
+                    <a ><i class="icon-instagram"></i></a>
+                </div><!-- End .instagram-feed-content -->
+            </figure><!-- End .instagram-feed -->
+        {% endfor %}
+
+    </div><!-- End .owl-carousel -->
+</div>
+{% endif %}

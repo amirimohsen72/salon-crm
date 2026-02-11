@@ -1,0 +1,35 @@
+{% extends 'front/_base.html' %}
+{% load i18n %}
+{% load static %}
+{#{% load crispy_forms_tags %}#}
+{% block page_title %}{% trans 'sign out page' %}{% endblock %}
+{% block style %}{% endblock %}
+{% block content %}
+    {% trans 'account' as page_cat %}
+    {% trans 'log out' as title_page %}
+    {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page modebox='login' %}
+
+
+    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
+         style="background-image: url('{% static 'front/assets/images/backgrounds/login-bg.jpg' %}')">
+        <div class="container">
+            <div class="form-box">
+                <div class="form-tab">
+                    <div class="col-12 text-center">
+                        <form method="post" action="{% url 'account_logout' %}">
+                            {% csrf_token %}
+                            <div class="text-center">
+                                <p class="text-center mb-3">{% trans 'are you sure to logout ?' %}</p>
+                            <button type="submit" class="btn btn-outline-primary-2">{% trans 'Sign Out' %}</button>
+{#                            <input type="submit" value="signout">#}
+                            </div>
+
+                        </form>
+                    </div>
+                </div><!-- End .form-tab -->
+            </div><!-- End .form-box -->
+        </div><!-- End .container -->
+    </div><!-- End .login-page section-bg -->
+
+
+{% endblock %}
