@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'appointments',
     'notifications',
     'salons',
+    'core',
     # 'rosetta',
 ]
 
