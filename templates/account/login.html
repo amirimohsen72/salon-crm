@@ -8,88 +8,86 @@
 {% block content %}
     {% trans 'account' as page_cat %}
     {% trans 'login' as title_page %}
-    {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page modebox='login' %}
+    {% comment %} {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page modebox='login' %} {% endcomment %}
 
 
-    <div class="login-page bg-image pt-8 pb-8 pt-md-12 pb-md-12 pt-lg-17 pb-lg-17"
-                style="background-image: url('{% static 'front/assets/images/backgrounds/login-bg.jpg' %}')">
-                <div class="container">
-                    <div class="form-box">
-                        <div class="form-tab">
-                            <ul class="nav nav-pills nav-fill" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link  active" id="signin-tab-2" data-toggle="tab" href="#signin-2" role="tab"
-                                        aria-controls="signin-2" aria-selected="true">{% trans 'login' %}</a>
-                                </li>
-                            </ul>
-                            <div class="tab-content">
-                                <div class="tab-pane fade  show active" id="signin-2" role="tabpanel" aria-labelledby="signin-tab-2">
-                                    <form method="POST" action="{% url 'account_login' %}">
-                                         {% csrf_token %}
+    <div class="card card-style">
+        <div class="content">
+            <form  method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <h1 class="text-center font-800 font-30 mb-2">{% trans 'login' %}</h1>
+                <p class="text-center font-13 mb-3">اطلاعات حساب کابری را وارد کنید</p>
+               
+                {% if form.errors %}
+                    <div class="alert alert-danger text-right">
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <span>{{ field.label }}{{field}}: {{ error }}</span><br>
+                            {% endfor %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                                               {% comment %} {% if form.non_field_errors %} 
+    {% for error in form.non_field_errors %} 
+       <p>{{ error }}</p> 
+   {% endfor %} 
+ {% endif %}  {% endcomment %}
 
-                                    {% if form.errors %}
-                                        <div class="alert alert-danger text-right">
-                                            {% for field in form %}
-                                                {% for error in field.errors %}
-                                                    <span>{{ field.label }}: {{ error }}</span><br>
-                                                {% endfor %}
-                                            {% endfor %}
-                                        </div>
-                                    {% endif %}
-{#                                        {% if form.non_field_errors %}#}
-{#    {% for error in form.non_field_errors %}#}
-{#        <p>{{ error }}</p>#}
-{#    {% endfor %}#}
-{#{% endif %}#}
+                <div class="form-custom form-label form-icon mb-3">
+                    <i class="bi bi-person-circle font-14"></i>
+                    <input type="text" class="form-control rounded-xs" id="c1" name="username" placeholder="{% trans "mail address" %}"/>
+                    <label for="c1" class="color-theme">{% trans "mail address" %}</label>
+                    <span>(ضروری)</span>
+                </div>
+                <div class="form-custom form-label form-icon mb-3">
+                    <i class="bi bi-asterisk font-12"></i>
+                    <input type="text" class="form-control rounded-xs" id="c2" name="password" placeholder="{% trans 'password' %}"/>
+                    <label for="c2" class="color-theme">{% trans 'password' %}</label>
+                    <span>(ضروری)</span>
+                </div>
 
-                                        <div class="form-group">
-                                            <label for="singin-email-2">{% trans "mail address" %} *</label>
-                                            <input type="text" class="form-control" id="singin-email-2"
-                                                name="login" required>
-{#                                            {{ form.login }}#}
-                                        </div><!-- End .form-group -->
+                {% comment %} {% trans 'remember me' %} {% endcomment %}
+                <button class='btn rounded-sm btn-m gradient-green font-700 mt-4 mb-3 btn-full shadow-bg shadow-bg-s'>{% trans 'login' %}</button>
+                {% comment %} <a href="#" class='btn rounded-sm btn-m gradient-green font-700 mt-4 mb-3 btn-full shadow-bg shadow-bg-s'>{% trans 'login' %}</a> {% endcomment %}
+                <div class="d-flex">
+                    <div>
+                        <a href="page-forgot-1.html" class="color-theme opacity-30 font-12">{% trans 'forget password?' %}</a>
+                    </div>
+                    {% comment %} <div class="ms-auto">
+                        <a href="page-register-1.html" class="color-theme opacity-30 font-12">ایجاد حساب</a>
+                    </div> {% endcomment %}
+                </div>
 
-                                        <div class="form-group">
-                                            <label for="singin-password-2">{% trans 'password' %} *</label>
-                                            <input type="password" class="form-control" id="singin-password-2"
-                                                name="password" required>
-{#                                            {{ form.password }}#}
-                                        </div><!-- End .form-group -->
+            </form>
+        </div>
+    </div>
 
-                                        <div class="form-footer">
-                                            <button type="submit" class="btn btn-outline-primary-2">
-                                                <span>{% trans 'login' %}</span>
-                                                <i class="icon-long-arrow-left"></i>
-                                            </button>
 
-                                            <div class="custom-control custom-checkbox">
+
+
+
+
+
+
+    {% comment %} {% static 'front/assets/images/backgrounds/login-bg.jpg' %} {% endcomment %}
+    {% comment %} {% trans 'login' %} {% endcomment %}
+    {% comment %} {% url 'login' %} {% endcomment %}
+                          
+                                    {% comment %} <form method="POST" action="{% url 'account_login' %}"> {% endcomment %}
+                                         {% comment %} {% csrf_token %} {% endcomment %}
+                                         {% comment %} {% trans "mail address" %} {% endcomment %}
+                                    {% comment %} {% trans 'password' %}  {% endcomment %}
+                                       {% comment %} {% trans 'login' %}  {% endcomment %}
+                                            {% comment %} <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" class="custom-control-input"
                                                     id="signin-remember-2" name="remember">
 {#                                                {{ form.remember }}#}
                                                 <label class="custom-control-label" for="signin-remember-2">{% trans 'remember me' %}</label>
-                                            </div><!-- End .custom-checkbox -->
+                                            </div><!-- End .custom-checkbox --> {% endcomment %}
 
-                                            <a href="{% url 'account_reset_password' %}" class="forgot-link">{% trans 'forget password?' %}</a>
-                                        </div><!-- End .form-footer -->
-                                    </form>
-                                    <div class="form-choice">
-                                        <p class="text-center">{% trans 'dont have account?' %}<a  href="{% url 'account_signup' %}">{% trans 'sign up' %}</a></p>
-{#                                        <div class="row">#}
-{#                                            <div class="col-sm-6">#}
-{#                                                <a href="#" class="btn btn-login btn-g">#}
-{#                                                    <i class="icon-google"></i>#}
-{#                                                    حساب کاربری گوگل#}
-{#                                                </a>#}
-{#                                            </div><!-- End .col-6 -->#}
-{#                                             #}
-{#                                        </div><!-- End .row -->#}
-                                    </div><!-- End .form-choice -->
-                                </div><!-- .End .tab-pane -->
-
-                            </div><!-- End .tab-content -->
-                        </div><!-- End .form-tab -->
-                    </div><!-- End .form-box -->
-                </div><!-- End .container -->
-            </div><!-- End .login-page section-bg -->
+                                            {% comment %} <a href="{% url 'account_reset_password' %}" class="forgot-link">{% trans 'forget password?' %}</a> {% endcomment %}
+                                          
+                                        {% comment %} <p class="text-center">{% trans 'dont have account?' %}<a  href="{% url 'account_signup' %}">{% trans 'sign up' %}</a></p> {% endcomment %}
+                                         
 
 {% endblock %}
