@@ -1,52 +1,64 @@
 {% extends 'front/_base.html' %}
-{% load account %}
+{%load static %}
+{% comment %} {% load account %} {% endcomment %}
 {% load i18n %}
 {#{% load crispy_forms_tags %}#}
-{% load persian_translation_tags %}
+{% comment %} {% load persian_translation_tags %} {% endcomment %}
 {% load humanize %}
 {% block page_title %}
     {% trans 'dashboard' %}
 {% endblock %}
 {% block content %}
 
-    <main class="main">
+{% trans 'account' as page_cat %}
+{% trans 'dashboard' as title_page %}
+{% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}
+                        {% comment %} {% include 'core/partials/dashboard_side.html' %} {% endcomment %}
 
-        {% trans 'account' as page_cat %}
-        {% trans 'dashboard' as title_page %}
-        {% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}
+<div class="card card-style">
+    <div class="card-body text-center">
+        <h5 class=" font-12 color-highlight font-700 pt-1">داشبورد مدیریت سالن زیبایی</h5>
+        <h1>کاربر : {{ user }}</h1>
+        {% comment %} {% user_display user %} {% endcomment %}
 
-
-        <div class="page-content">
-            <div class="dashboard">
-                <div class="container">
-                    <div class="row">
-                        {% include 'core/partials/dashboard_side.html' %}
-
-{#                        <div class="col-md-8 col-lg-9">#}
-                        <div class="col-md-9 col-lg-10">
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="tab-dashboard" role="tabpanel"
-                                     aria-labelledby="tab-dashboard-link">
-                                    <p>{% trans 'hello' %} <span
-                                            class="font-weight-normal text-dark">{% user_display user %}</span>
-                                        <br>
-                                        {% blocktrans %}
-                                            Always be sure to have a secure password for your user account. If needed,
-                                            you can define a reliable password for yourself through the
-                                            <a href="#">password change page</a>.
-                                        {% endblocktrans %}
-
-                                    </p>
-                                </div><!-- .End .tab-pane -->
-
-                            </div>
-                        </div><!-- End .col-lg-9 -->
-                    </div><!-- End .row -->
-                </div><!-- End .container -->
-            </div><!-- End .dashboard -->
-        </div><!-- End .page-content -->
+        <p class="mb-3">
+            {% blocktrans %}
+            Always be sure to have a secure password for your user account. If needed,
+            you can define a reliable password for yourself through the
+            <a href="#">password change page</a>.
+            {% endblocktrans %}
+            </p>
+            <p><form method="post" action="{% url 'logout' %}">
+                {% csrf_token %}
+                <button>خروج از حساب کاربری</button>
+                
+            </form></p>
+    </div>
+</div>
 
 
-    </main><!-- End .main -->
-
+<div class="card card-style bg-fade2-blue">
+    <div class="content">
+        <h5 class="color-highlight font-13 ">مدیریت مشتریان</h5>
+        {% comment %} <p class="color-blue-dark">این کارت عنوان کوچکتری نسبت به عنوان اصلی شما دارد. ویرایش آن برای مطابقت با نیازهای شما آسان است.</p> {% endcomment %}
+        <div class="row mb-0">
+			<div class="col-md-6 ">
+				<div class="card card-style me-2  me-md-0">
+					<a href="{% url 'customer_add' %}"><img src="{% static 'front/assets/images/customer/cutomer_add.PNG' %}" class="img-fluid"></a>
+					<div class="content pb-0">
+						<a href="{% url 'customer_add' %}"> <h3>ثبت مشتری جدید</h3></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ">
+				<div class="card card-style ms-2 ms-md-0">
+					<a href="{% url 'customer_list' %}"><img src="{% static 'front/assets/images/customer/customer_list.png' %}" class="img-fluid"></a>
+					<div class="content pb-0">
+						<a href="{% url 'customer_list' %}"><h3>مدیریت مشتریان</h3></a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
 {% endblock %}

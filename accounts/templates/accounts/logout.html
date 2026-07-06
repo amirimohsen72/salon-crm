@@ -1,0 +1,30 @@
+{% extends 'front/_base.html' %}
+{%load static %}
+{% comment %} {% load account %} {% endcomment %}
+{% load i18n %}
+{#{% load crispy_forms_tags %}#}
+{% comment %} {% load persian_translation_tags %} {% endcomment %}
+{% load humanize %}
+{% comment %} {% block page_title %}
+    {% trans 'logout' %}
+{% endblock %} {% endcomment %}
+{% block content %}
+
+{% comment %} {% trans 'account' as page_cat %}
+{% trans 'dashboard' as title_page %}
+{% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %} {% endcomment %}
+                        {% comment %} {% include 'core/partials/dashboard_side.html' %} {% endcomment %}
+
+<div class="card card-style">
+    <div class="card-body text-center">
+        <h5 class=" font-12 color-highlight font-700 pt-1">منتظر بازگشت مجدد شما هستیم.</h5>
+        {% comment %} <h1>کاربر : {{ user }}</h1> {% endcomment %}
+
+        <p class="mb-3">
+            با تشکر از استفاده شما از سیستم مدیریت سالن زیبایی ؛ در صورت مواجهه با هر گونه مشکل فنی و موردی که از دید شما قابل اصلاح بود لطفا آن را به ما اطلاع دهید. با تشکر.
+            </p>
+    </div>
+</div>
+
+ 
+{% endblock %}

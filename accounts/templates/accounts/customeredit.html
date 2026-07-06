@@ -1,0 +1,116 @@
+{% extends 'front/_base.html' %}
+{%load static %}
+{% comment %} {% load account %} {% endcomment %}
+{% load i18n %}
+{#{% load crispy_forms_tags %}#}
+{% comment %} {% load persian_translation_tags %} {% endcomment %}
+{% load humanize %}
+{% block page_title %}
+    {% trans 'dashboard' %}
+{% endblock %}
+{% block content %}
+
+{% trans 'customers' as page_cat %}
+{% trans 'customer edit' as title_page %}
+{% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}
+                        {% comment %} {% include 'core/partials/dashboard_side.html' %} {% endcomment %}
+ 
+                        <div class="card overflow-visible card-style">
+                            <div class="content">
+                                <h4 class="mb-2">ویرایش مشتری</h4>
+ 
+                                <form method="post" class="mt-3">
+                                    {% csrf_token %}
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-custom form-label form-icon mb-3">
+                                                <i class="bi bi-person-circle color-blue-dark font-14"></i>
+                                                <input type="text" class="form-control rounded-xs" id="{{ form.first_name.id_for_label }}" name="{{ form.first_name.name }}" value="{{ form.first_name.value|default:'' }}" placeholder="نام کوچک"  required />
+                                                <label for="{{ form.first_name.id_for_label }}" class="form-label-always-active color-blue-dark">{{ form.first_name.label }}</label>
+                                                <div class="valid-feedback">معتبر<!-- text for field valid--></div>
+                                                <div class="invalid-feedback">{% if form.first_name.errors %} {{ form.first_name.errors }} {% endif %}</div>
+                                                {% if form.first_name.errors %} <div class="errors">{{ form.first_name.errors }}</div> {% endif %}
+                                                <span>(ضروری)</span>
+                                            </div> 
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-custom form-label form-icon mb-3">
+                                                <i class="bi bi-person-circle color-blue-dark font-14"></i>
+                                                {% comment %} pattern="[A-Za-z ]{1,32}" {% endcomment %}
+                                                <input type="text" class="form-control rounded-xs" id="{{ form.last_name.id_for_label }}" name="{{ form.last_name.name }}" value="{{ form.last_name.value|default:'' }}" placeholder="نام خانوادگی"  required />
+                                                <label for="{{ form.last_name.id_for_label }}" class="form-label-always-active color-blue-dark">{{ form.last_name.label }}</label>
+                                                <div class="valid-feedback">معتبر<!-- text for field valid--></div>
+                                                <div class="invalid-feedback">نام وجود ندارد یا نامعتبر است</div>
+                                                {% if form.last_name.errors %} <div class="errors">{{ form.last_name.errors }} </div>{% endif %}
+                                                <span>(ضروری)</span>
+                                            </div> 
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-custom form-label form-icon mb-3">
+                                                <i class="bi bi-telephone-fill color-blue-dark font-14"></i>
+                                                <input type="text" class="form-control rounded-xs" id="{{ form.phone_number.id_for_label }}" name="{{ form.phone_number.name }}" value="{{ form.phone_number.value|default:'' }}" placeholder="09xxxxxxxxx" pattern="[+ 0-9]{10,15}" required />
+                                                <label for="{{ form.phone_number.id_for_label }}" class="form-label-always-active color-blue-dark">{{ form.phone_number.label }}</label>
+                                                <div class="valid-feedback">معتبر<!-- text for field valid--></div>
+                                                <div class="invalid-feedback">شماره تلفن موجود نیست یا نامعتبر است</div>
+                                                {% if form.phone_number.errors %} <div class="errors">{{ form.phone_number.errors }} </div>{% endif %}
+                                                <span>(ضروری)</span>
+                                            </div> 
+ 
+                                             
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-custom form-label form-icon mb-3">
+                                                <i class="bi bi-pencil-fill font-12"></i>
+                                                <textarea class="form-control rounded-xs" placeholder="یادداشت شما" id="{{ form.note.id_for_label }}" name="{{ form.note.name }}" >{{ form.note.value|default:'' }}</textarea>
+                                                <label for="{{ form.note.id_for_label }}" class="color-theme">{{ form.note.label }}</label>
+                                                <div class="valid-feedback">اعتبار سنجی فیلد یادداشت را ارائه نمی دهد!<!-- text for field valid--></div>
+                                                {% if form.note.errors %}<div class="errors">{{ form.note.errors }}</div>{% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+                                        
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-custom form-label form-icon mb-3">
+                                                <i class="bi bi-person-circle color-blue-dark font-14"></i>
+                                                <input type="text" class="form-control rounded-xs" id="{{ form.birth_date.id_for_label }}" name="{{ form.birth_date.name }}" value="{{ form.birth_date.value|default:'' }}" placeholder="تاریخ تولد"   />
+                                                <label for="{{ form.birth_date.id_for_label }}" class="form-label-always-active color-blue-dark">{{ form.birth_date.label }}</label>
+                                                <div class="valid-feedback">معتبر<!-- text for field valid--></div>
+                                                <div class="invalid-feedback">تاریخ تولد وجود ندارد یا نامعتبر است</div>
+                                                {% if form.birth_date.errors %} <div class="errors">{{ form.birth_date.errors }} </div>{% endif %}
+                                            </div> 
+                                             
+                                        </div>
+                                        
+                                        <div class="col-md-6 mb-3">
+                                            <div class="form-custom form-label form-icon mb-3">
+                                                <i class="bi bi-check-circle color-blue-dark font-14"></i>
+                                                {{ form.birth_month }}
+                                                {% comment %} <select class="form-select rounded-xs" id="c6" aria-label="Floating label select example">
+							<option selected>تلفن همراه وب اپلیکیشن</option>
+							<option value="1">بووت استرپ 5</option> 
+						</select> {% endcomment %}
+                                                <label for="{{ form.birth_month.id_for_label }}" class="form-label-always-active color-blue-dark">{{ form.birth_month.label }}</label>
+                                                <div class="valid-feedback">معتبر<!-- text for field valid--></div>
+                                                <div class="invalid-feedback">ماه تولد وجود ندارد یا نامعتبر است</div>
+                                                {% if form.birth_month.errors %} <div class="errors">{{ form.birth_month.errors }} </div>{% endif %}
+                                            </div> 
+
+                                        </div>
+                                         
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn btn-success">{% trans 'Save Changes' %}</button>
+                                        <a href="{% url 'customer_list' %}" class="btn btn-secondary">{% trans 'Cancel' %}</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+{% endblock %}

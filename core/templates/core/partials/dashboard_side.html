@@ -19,26 +19,9 @@
             <a class="nav-link {% if  request.path == '/accounts/info/' %}active{% endif %}" id="tab-info-link" href="{% url 'change_info' %}"
                aria-controls="tab-info" aria-selected="false">{% trans 'personal info' %}</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link {% if  request.path == '/orders/list/' %}active{% endif %}" id="tab-downloads-link"
-               href="{% url 'order_list' %}" role="tab" aria-controls="tab-downloads"
-               aria-selected="false">{% trans 'order list' %}</a>
-        </li>
-        <li class="nav-item">
-
-            <a class="nav-link {% if  request.path == '/payment/list/' %}active{% endif %}" id="tab-downloads-link"
-               href="{% url 'payment:payment_list' %}" role="tab" aria-controls="tab-downloads"
-               aria-selected="false">{% trans 'payment list' %}</a>
-        </li>
-
-        <li class="nav-item ">
-            <a class="nav-link {% if  request.path == '/ticket/list/' %}active{% endif %}" id="tab-downloads-link"
-               href="{% url 'ticket_list' %}" role="tab" aria-controls="tab-downloads"
-               aria-selected="false">{% trans 'ticket' %}</a>
-        </li>
-
+{% comment %} 
         <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">{% trans 'log out' %}</a>
-        </li>
+        </li> {% endcomment %}
     </ul>
 </aside><!-- End .col-lg-3 -->

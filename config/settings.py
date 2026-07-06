@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'notifications',
     'salons',
     'core',
-    # 'rosetta',
+    'rosetta',
 ]
 
 MIDDLEWARE = [
@@ -150,7 +150,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # new code
 AUTH_USER_MODEL = 'accounts.CustomUser'
-# LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'dashboard'
 # LOGOUT_REDIRECT_URL = 'home'
 
 JALALI_DATE_DEFAULTS = {

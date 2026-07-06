@@ -24,7 +24,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('core.urls')),
 
-    # path('rosetta/', include('rosetta.urls')),
+    path('rosetta/', include('rosetta.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 # +static remove when uploaded

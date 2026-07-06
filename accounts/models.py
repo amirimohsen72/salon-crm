@@ -66,6 +66,13 @@ class Customer(SalonBaseModel):
     is_active = models.BooleanField(default=True , verbose_name=_('active'))
     note = models.TextField(blank=True, verbose_name=_('note'))
 
+    @property
+    def is_active_display(self):
+        return _('Active') if self.is_active else _('Inactive')
+    
+    def get_full_name(self):
+        return f"{ self.first_name} {self.last_name}"    
+
     def __str__(self):
         return f"{ self.first_name} {self.last_name} ({self.phone_number})"    
 

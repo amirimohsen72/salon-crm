@@ -1,0 +1,66 @@
+{% extends 'front/_base.html' %}
+{%load static %}
+{% comment %} {% load account %} {% endcomment %}
+{% load i18n %}
+{#{% load crispy_forms_tags %}#}
+{% comment %} {% load persian_translation_tags %} {% endcomment %}
+{% load humanize %}
+{% block page_title %}
+    {% trans 'dashboard' %}
+{% endblock %}
+{% block content %}
+
+{% trans 'customers' as page_cat %}
+{% trans 'customer list' as title_page %}
+{% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}
+                        {% comment %} {% include 'core/partials/dashboard_side.html' %} {% endcomment %}
+ 
+                        <div class="card overflow-visible card-style">
+                            <div class="content">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h4 class="mb-0">لیست مشتریان</h4>
+                                    <a href="{% url 'customer_add' %}" class="btn btn-success btn-sm">+ مشتری جدید</a>
+                                </div>
+
+                                {% comment %} <p>
+                                   
+                                </p> {% endcomment %}
+                                <div class="border border-blue-dark rounded-s overflow-hidden">
+                                <table class="table color-theme border-blue-dark mb-0">
+                                <thead class="rounded-s bg-blue-dark border-l">
+                                    <tr class="color-white">
+                                      <th scope="col"><h5 class="color-white font-15 mb-0">نام و نام خانوادگی</h5></th>
+                                      <th scope="col"><h5 class="color-white font-15 mb-0">شماره تماس</h5></th>
+                                      <th scope="col"><h5 class="color-white font-15 mb-0">وضعیت</h5></th>
+                                      <th scope="col"><h5 class="color-white font-15 mb-0">عملیات</h5></th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+
+                                    {% if customer_list %} {% for customer in customer_list %}
+
+
+                                    <tr>
+                                      <td><strong>{{ customer.get_full_name |capfirst }}</strong></td>
+                                      <td>{{ customer.phone_number }}</td>
+                                      <td>{{ customer.is_active_display }}</td>
+                                      <td>
+                                        <a href="{% url 'customer_edit' customer.pk %}" class="btn btn-warning btn-sm">ویرایش</a>
+                                      </td>
+                                    </tr>
+                                    {% endfor %} {% if page_obj %} {% include 'front/partials/front/pagination.html' %} {% endif %} {% else %}
+                                      <tr><td colspan="4">{% trans 'Not Found Any Customer' %}</td></tr>
+                                    {% endif %}
+{% comment %}                                      
+                                    <tr>
+                                      <td class="border-0"><strong>ویندوز</strong></td>
+                                      <td class="border-0">0%</td>
+                                      <td class="border-0">خیر</td>
+                                      <td class="border-0">خیر</td>
+                                    </tr> {% endcomment %}
+                                  </tbody>
+                                </table>
+                                </div>
+                            </div>
+                        </div>
+{% endblock %}

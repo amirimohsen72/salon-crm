@@ -8,22 +8,270 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-11 21:28+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2026-07-07 00:34+0330\n"
+"PO-Revision-Date: 2026-07-06 19:37+0330\n"
+"Last-Translator: محسن ا <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Translated-Using: django-rosetta 0.10.3\n"
+
+#: .\templates\404.html:5
+msgid "404 - page not found"
+msgstr "خطای 404 ! صفحه مورد نظر یافت نشد ."
+
+#: .\templates\404.html:15 .\templates\500.html:75
+msgid "error"
+msgstr "خطا"
+
+#: .\templates\404.html:16
+msgid "404"
+msgstr "404"
+
+#: .\templates\404.html:22
+msgid "Error 404"
+msgstr "خطای 404"
+
+#: .\templates\404.html:23
+msgid "Unfortunately, the page you are looking for does not exist on the site"
+msgstr "متاسفانه صفحه مورد نظر شما در سایت وجود ندارد"
+
+#: .\templates\404.html:25 .\templates\500.html:85
+msgid "go to home"
+msgstr "مشاهده صفحه اصلی"
+
+#: .\templates\500.html:10
+msgid "500 - server error"
+msgstr "خطای 500 ! خطای سیستم سرور ."
+
+#: .\templates\500.html:76
+msgid "500"
+msgstr "500"
+
+#: .\templates\500.html:82
+msgid "Error 500"
+msgstr "خطای 500"
+
+#: .\templates\500.html:83
+msgid "Unfortunately, the server is unable to respond to your request"
+msgstr "متاسفانه، سرور قادر به پاسخگویی به درخواست شما نیست."
+
+#: .\templates\500.html:98 .\templates\front\_home_base.html:111
+msgid "go to top"
+msgstr "بالای صفحه"
+
+#: .\templates\account\email\email_confirmation_message.txt:5
+#, python-format
+msgid ""
+"\n"
+"Hello from %(site_name)s\n"
+"\n"
+"if you requested this email for signup in our site plaese click on bellow "
+"link for activate your account.\n"
+"\n"
+"%(activate_url)s\n"
+"\n"
+msgstr ""
+"\n"
+"سلام از %(site_name)s\n"
+"اگر این ایمیل را برای ثبت نام در سایت ما درخواست کرده‌اید، لطفاً برای فعال "
+"کردن حساب خود روی لینک زیر کلیک کنید.\n"
+"%(activate_url)s\n"
+
+#: .\templates\account\email\email_confirmation_sujbect.txt:3
+msgid "Please confirm email"
+msgstr "لطفا ایمیل را تایید کنید"
+
+#: .\templates\account\email_confirm.html:9
+#: .\templates\account\email_confirm.html:26
+msgid "Confirm E-mail Address"
+msgstr "تأیید آدرس ایمیل"
+
+#: .\templates\account\email_confirm.html:12 .\templates\account\login.html:9
+#: .\templates\account\logout.html:8
+#: .\templates\account\password_change.html:14
+#: .\templates\account\signup.html:8
+msgid "account"
+msgstr "حساب کاربری"
+
+#: .\templates\account\email_confirm.html:13 .\templates\account\logout.html:9
+msgid "log out"
+msgstr "خروج"
+
+#: .\templates\account\email_confirm.html:34
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s</a> is an e-mail "
+"address for user %(user_display)s."
+msgstr ""
+"لطفاً تأیید کنید که <a href=\"mailto:%(email)s\">%(email)s</a> یک آدرس ایمیل "
+"برای کاربر %(user_display)s است."
+
+#: .\templates\account\email_confirm.html:38
+msgid "Confirm"
+msgstr "تائید"
+
+#: .\templates\account\email_confirm.html:46
+#, python-format
+msgid ""
+"This e-mail confirmation link expired or is invalid. Please <a href=\"%"
+"(email_url)s\">issue a new e-mail confirmation request</a>."
+msgstr ""
+"این لینک تأیید ایمیل منقضی شده یا نامعتبر است. لطفاً <a href=\"%(email_url)s"
+"\">درخواست تأیید ایمیل جدیدی ارسال کنید</a>."
+
+#: .\templates\account\login.html:6
+msgid "login page"
+msgstr "صفحه ورود"
+
+#: .\templates\account\login.html:10 .\templates\account\login.html:19
+#: .\templates\account\login.html:54 .\templates\account\signup.html:68
+msgid "login"
+msgstr "ورود"
+
+#: .\templates\account\login.html:41 .\templates\account\login.html:42
+msgid "user name"
+msgstr "نام کاربری"
+
+#: .\templates\account\login.html:47 .\templates\account\login.html:48
+msgid "password"
+msgstr "رمز عبور"
+
+#: .\templates\account\login.html:59
+msgid "forget password?"
+msgstr "رمز عبور را فراموش کرده اید؟"
+
+#: .\templates\account\logout.html:5
+msgid "sign out page"
+msgstr "صفحه خروج از حساب کاربری"
+
+#: .\templates\account\logout.html:22
+msgid "are you sure to logout ?"
+msgstr "میخواهید از حساب کاربری خود خارج شوید ؟"
+
+#: .\templates\account\logout.html:23
+msgid "Sign Out"
+msgstr "خروج"
+
+#: .\templates\account\password_change.html:8
+msgid "dashboars"
+msgstr "داشبرد"
+
+#: .\templates\account\password_change.html:15
+msgid "change password"
+msgstr "تغییر رمز عبور"
+
+#: .\templates\account\password_change.html:70
+msgid "Change Password"
+msgstr "تغییر رمز عبور"
+
+#: .\templates\account\signup.html:5
+msgid "sign up page"
+msgstr "صفحه عضویت"
+
+#: .\templates\account\signup.html:9 .\templates\account\signup.html:21
+#: .\templates\account\signup.html:61
+msgid "sign up"
+msgstr "عضویت"
+
+#: .\templates\account\signup.html:68
+msgid "have account?"
+msgstr "نیاز به حساب کاربری دارید؟"
+
+#: .\templates\front\_base.html:12 .\templates\front\base1.html:12
+#: .\templates\front\base1.html:23
+msgid "tivan smart device"
+msgstr ""
+
+#: .\templates\front\_base_body.html:9
+msgid "print factor"
+msgstr "چاپ فاکتور"
+
+#: .\templates\front\footer.html:7
+#: .\templates\front\partials\breadcrumbheader.html:15
+msgid "home"
+msgstr "خانه"
+
+#: .\templates\front\footer.html:8
+msgid "devices"
+msgstr ""
+
+#: .\templates\front\footer.html:9
+msgid "settings"
+msgstr "تنظیمات"
+
+#: .\templates\front\footer.html:10
+msgid "profile"
+msgstr "پروفایل"
+
+#: .\templates\front\footer_home.html:15
+msgid "about us"
+msgstr "درباره ما"
+
+#: .\templates\front\footer_home.html:20
+#: .\templates\front\partials\navbar_mobile.html:65
+msgid "mobile"
+msgstr "موبایل"
+
+#: .\templates\front\footer_home.html:24
+#: .\templates\front\partials\navbar_mobile.html:70
+msgid "phone"
+msgstr "تلفن"
+
+#: .\templates\front\footer_home.html:27
+#: .\templates\front\partials\navbar_mobile.html:75
+msgid "instagram"
+msgstr "اینستگرام"
+
+#: .\templates\front\footer_home.html:31
+#: .\templates\front\partials\navbar_mobile.html:79
+msgid "email"
+msgstr "ایمیل"
+
+#: .\templates\front\home.html:5
+msgid "home page"
+msgstr "صفحه اصلی"
+
+#: .\templates\front\partials\home_category_banner.html:19
+#: .\templates\front\partials\home_category_banner.html:43
+#: .\templates\front\partials\home_category_banner.html:69
+msgid "see more"
+msgstr "مشاهده بیشتر"
+
+#: .\templates\front\partials\home_customer_rewiew.html:6
+msgid "reviews"
+msgstr "نظرات"
+
+#: .\templates\front\partials\home_newest_product.html:6
+msgid "newest product"
+msgstr ""
+
+#: .\templates\front\partials\home_newest_product.html:58
+msgid "add to cart"
+msgstr ""
+
+#: .\templates\front\partials\home_newest_product.html:71
+msgid "$"
+msgstr ""
+
+#: .\templates\front\partials\home_slider.html:31
+msgid "view more detail"
+msgstr "مشاهده جزییات بیشتر"
+
+#: .\templates\front\partials\navbar.html:58
+#: .\templates\front\partials\navbar2.html:45
+msgid "contents"
+msgstr "مطالب"
 
 #: .\venv\Lib\site-packages\django\contrib\messages\apps.py:16
 msgid "Messages"
-msgstr ""
+msgstr "پیام ها"
 
 #: .\venv\Lib\site-packages\django\contrib\sitemaps\apps.py:8
 msgid "Site Maps"
-msgstr ""
+msgstr "سایت مپ ها"
 
 #: .\venv\Lib\site-packages\django\contrib\staticfiles\apps.py:9
 msgid "Static Files"

@@ -1,20 +1,29 @@
 {% load i18n %}
 {% load static %}
-{% if modebox != 'login' and modebox != 'nobox' %}
-<div class="page-header text-center" style="background-image: url('{% static 'front/assets/images/page-header-bg.jpg' %}')">
-    <div class="container">
-        <h1 class="page-title">{{ header_title }}
-            {#                        <span>صفحات</span>#}
-        </h1>
-    </div><!-- End .container -->
-</div><!-- End .page-header -->{% endif %}
-<nav aria-label="breadcrumb" class="breadcrumb-nav {% if modebox == 'login' %}border-0 mb-0{% endif %}">
-    <div class="container">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'home' %}">{% trans 'home' %}</a></li>
-            <li class="breadcrumb-item"><a href="#">{{ page_cat }}</a></li>
-            <li class="breadcrumb-item active" aria-current="page">{{ header_title }}</li>
-        </ol>
-    </div><!-- End .container -->
-</nav><!-- End .breadcrumb-nav -->
+{% comment %} {% if modebox != 'login' and modebox != 'nobox' %}
+{{ header_title }}
+{% endif %} {% endcomment %}
 
+
+<div class="card card-style">
+    <div class="content">
+        {% comment %} <p class="font-700  color-highlight"> {% endcomment %}
+            <div class="container">
+                <ol class="breadcrumb float-start rtl">
+                    <li class="breadcrumb-item me-2"><a href="{% url 'home' %}">{% trans 'home' %}</a></li>
+                    <li class="breadcrumb-item me-2"><a href="#">{{ page_cat }}</a></li>
+                    <li class="breadcrumb-item active me-2" aria-current="page">{{ header_title }}</li>
+                </ol>
+            </div><!-- End .container -->
+        {% comment %} </p> {% endcomment %}
+    </div>
+</div>
+
+
+{% comment %} {% if modebox == 'login' %}border-0 mb-0{% endif %} {% endcomment %}
+
+{% comment %} 
+<nav aria-label="breadcrumb" class="breadcrumb-nav ">
+
+</nav><!-- End .breadcrumb-nav -->
+ {% endcomment %}

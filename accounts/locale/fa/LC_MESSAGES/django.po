@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-22 01:00+0330\n"
-"PO-Revision-Date: 2026-01-22 00:34+0330\n"
-"Last-Translator:   <amirimohsen72@gmail.com>\n"
+"POT-Creation-Date: 2026-07-07 00:34+0330\n"
+"PO-Revision-Date: 2026-07-07 00:36+0330\n"
+"Last-Translator: محسن ا <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,6 +22,19 @@ msgstr ""
 msgid "accounts"
 msgstr "حساب های کاربری"
 
+#: .\accounts\forms.py:33 .\accounts\forms.py:53 .\accounts\models.py:55
+msgid "first name"
+msgstr "نام"
+
+#: .\accounts\forms.py:34 .\accounts\forms.py:54 .\accounts\models.py:56
+msgid "last name"
+msgstr "نام خانوادگی"
+
+#: .\accounts\forms.py:35 .\accounts\forms.py:55 .\accounts\models.py:16
+#: .\accounts\models.py:57
+msgid "phone number"
+msgstr "شماره تلفن"
+
 #: .\accounts\models.py:12
 msgid "account"
 msgstr "حساب کاربری"
@@ -29,10 +42,6 @@ msgstr "حساب کاربری"
 #: .\accounts\models.py:15
 msgid "age"
 msgstr "سن"
-
-#: .\accounts\models.py:16 .\accounts\models.py:57
-msgid "phone number"
-msgstr "شماره تلفن"
 
 #: .\accounts\models.py:22
 msgid "salon"
@@ -90,17 +99,11 @@ msgstr "اسفند"
 msgid "customer"
 msgstr "مشتری"
 
-#: .\accounts\models.py:53
+#: .\accounts\models.py:53 .\accounts\templates\accounts\addcustomer.html:15
+#: .\accounts\templates\accounts\customeredit.html:15
+#: .\accounts\templates\accounts\customerlist.html:15
 msgid "customers"
 msgstr "مشتریان"
-
-#: .\accounts\models.py:55
-msgid "first name"
-msgstr "نام"
-
-#: .\accounts\models.py:56
-msgid "last name"
-msgstr "نام خانوادگی"
 
 #: .\accounts\models.py:58
 msgid "birth date"
@@ -121,6 +124,59 @@ msgstr "فعال"
 #: .\accounts\models.py:67
 msgid "note"
 msgstr "یادداشت"
+
+#: .\accounts\models.py:71
+msgid "Active"
+msgstr "فعال"
+
+#: .\accounts\models.py:71
+msgid "Inactive"
+msgstr "غیر فعال"
+
+#: .\accounts\templates\accounts\addcustomer.html:11
+#: .\accounts\templates\accounts\customeredit.html:11
+#: .\accounts\templates\accounts\customerlist.html:11
+msgid "dashboard"
+msgstr "داشبورد"
+
+#: .\accounts\templates\accounts\addcustomer.html:16
+msgid "customer add"
+msgstr "افزودن مشتری"
+
+#: .\accounts\templates\accounts\addcustomer.html:115
+#| msgid "active"
+msgid "Save"
+msgstr "ذخیره"
+
+#: .\accounts\templates\accounts\addcustomer.html:116
+#: .\accounts\templates\accounts\customeredit.html:116
+msgid "Cancel"
+msgstr "انصراف"
+
+#: .\accounts\templates\accounts\customeredit.html:16
+#| msgid "customer list"
+msgid "customer edit"
+msgstr "ویرایش مشتری"
+
+#: .\accounts\templates\accounts\customeredit.html:115
+msgid "Save Changes"
+msgstr "ذخیره اطلاعات"
+
+#: .\accounts\templates\accounts\customerlist.html:16
+msgid "customer list"
+msgstr "لیست مشتریان"
+
+#: .\accounts\templates\accounts\customerlist.html:56
+msgid "Not Found Any Customer"
+msgstr "هیچ مشتری ای برای نمایش یافت نشد."
+
+#: .\accounts\views.py:66
+msgid "your info change success fully."
+msgstr "اطلاعات شما با موفقیت ویرایش شد."
+
+#: .\accounts\views.py:68
+msgid "your info change not submited."
+msgstr "ویرایش اطلاعات شما با خطا مواجه شده است."
 
 #~ msgid "mobile"
 #~ msgstr "موبایل"
