@@ -6,3 +6,6 @@ class AppointmentsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'appointments'
     verbose_name = _('appointments')
+
+    def ready(self):
+        import notifications.signals

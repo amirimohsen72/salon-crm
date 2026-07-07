@@ -23,6 +23,7 @@ urlpatterns = [
     #   path('accounts/',include('django.contrib.auth.urls')),
     path('accounts/', include('accounts.urls')),
     path('', include('core.urls')),
+    path('appointments/', include('appointments.urls')),
 
     path('rosetta/', include('rosetta.urls')),
 

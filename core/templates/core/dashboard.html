@@ -61,4 +61,28 @@
 		</div>
     </div>
 </div>
+
+<div class="card card-style bg-fade2-blue">
+    <div class="content">
+        <h5 class="color-highlight font-13 ">مدیریت رزرواسیون</h5>
+        <div class="row mb-0">
+			<div class="col-md-6 ">
+				<div class="card card-style me-2  me-md-0">
+					<a href="{% url 'appointment_add' %}"><img src="{% static 'front/assets/images/customer/reserve_add.PNG' %}" class="img-fluid"></a>
+					<div class="content pb-0">
+						<a href="{% url 'appointment_add' %}"> <h3>رزرو جدید</h3></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ">
+				<div class="card card-style ms-2 ms-md-0">
+					<a href="{% url 'appointment_list' %}"><img src="{% static 'front/assets/images/customer/reserve_list.png' %}" class="img-fluid"></a>
+					<div class="content pb-0">
+						<a href="{% url 'appointment_list' %}"><h3>مدیریت رزروها</h3></a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
 {% endblock %}

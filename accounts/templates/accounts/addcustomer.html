@@ -79,7 +79,7 @@
                                         <div class="col-md-6 mb-3">
                                             <div class="form-custom form-label form-icon mb-3">
                                                 <i class="bi bi-person-circle color-blue-dark font-14"></i>
-                                                <input type="text" class="form-control rounded-xs" id="{{ form.birth_date.id_for_label }}" name="{{ form.birth_date.name }}" placeholder="تاریخ تولد"   />
+                                                <input type="date" class="form-control rounded-xs" id="{{ form.birth_date.id_for_label }}" name="{{ form.birth_date.name }}" placeholder="تاریخ تولد"   min="1340-01-01" value="2021-06-01" />
                                                 <label for="{{ form.birth_date.id_for_label }}" class="form-label-always-active color-blue-dark">{{ form.birth_date.label }}</label>
                                                 <div class="valid-feedback">معتبر<!-- text for field valid--></div>
                                                 <div class="invalid-feedback">تاریخ تولد وجود ندارد یا نامعتبر است</div>
