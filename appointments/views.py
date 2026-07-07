@@ -1,11 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView
 from django.utils.translation import gettext as _
 
 from salons.mixins import SalonAccessMixin
 from .models import Appointment, AppointmentService
-from .forms import AppointmentForm, AppointmentServiceForm
+from .forms import AppointmentForm, AppointmentServiceForm, AppointmentServiceFormSet
+from services.models import Service
 
 
 class AppointmentListView(SalonAccessMixin, ListView):
@@ -49,9 +50,35 @@ class AppointmentCreateView(SalonAccessMixin, CreateView):
         kwargs['user'] = self.request.user
         return kwargs
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.POST:
+            context['service_formset'] = AppointmentServiceFormSet(
+                self.request.POST,
+                instance=self.object,
+                form_kwargs={'user': self.request.user}
+            )
+        else:
+            context['service_formset'] = AppointmentServiceFormSet(
+                instance=self.object,
+                form_kwargs={'user': self.request.user}
+            )
+        return context
+
     def form_valid(self, form):
         form.instance.salon = self.request.user.salon
-        return super().form_valid(form)
+        self.object = form.save()
+
+        # Handle the formset
+        context = self.get_context_data()
+        service_formset = context['service_formset']
+        if service_formset.is_valid():
+            service_formset.instance = self.object
+            service_formset.save()
+        else:
+            return self.render_to_response(self.get_context_data(form=form))
+
+        return redirect(self.success_url)
 
 
 class AppointmentUpdateView(SalonAccessMixin, UpdateView):
@@ -64,3 +91,32 @@ class AppointmentUpdateView(SalonAccessMixin, UpdateView):
         kwargs = super().get_form_kwargs()
         kwargs['user'] = self.request.user
         return kwargs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if self.request.POST:
+            context['service_formset'] = AppointmentServiceFormSet(
+                self.request.POST,
+                instance=self.object,
+                form_kwargs={'user': self.request.user}
+            )
+        else:
+            context['service_formset'] = AppointmentServiceFormSet(
+                instance=self.object,
+                form_kwargs={'user': self.request.user}
+            )
+        return context
+
+    def form_valid(self, form):
+        self.object = form.save()
+
+        # Handle the formset
+        context = self.get_context_data()
+        service_formset = context['service_formset']
+        if service_formset.is_valid():
+            service_formset.instance = self.object
+            service_formset.save()
+        else:
+            return self.render_to_response(self.get_context_data(form=form))
+
+        return redirect(self.success_url)

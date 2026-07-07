@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import inlineformset_factory
 from django.utils.translation import gettext as _
 from django.utils import timezone
 from .models import Appointment, AppointmentService
@@ -60,3 +61,15 @@ class AppointmentServiceForm(forms.ModelForm):
         if start_time and start_time < timezone.now():
             raise forms.ValidationError(_("Start time cannot be in the past"))
         return start_time
+
+
+# Inline formset for managing services within an appointment
+AppointmentServiceFormSet = inlineformset_factory(
+    Appointment,
+    AppointmentService,
+    form=AppointmentServiceForm,
+    extra=0,
+    can_delete=True,
+    min_num=1,
+    validate_min=True,
+)
