@@ -85,4 +85,28 @@
 		</div>
     </div>
 </div>
+
+<div class="card card-style bg-fade2-blue">
+    <div class="content">
+        <h5 class="color-highlight font-13 ">مدیریت خدمات</h5>
+        <div class="row mb-0">
+			<div class="col-md-6 ">
+				<div class="card card-style me-2  me-md-0">
+					<a href="{% url 'service_add' %}"><img src="{% static 'front/assets/images/customer/service_add.png' %}" class="img-fluid"></a>
+					<div class="content pb-0">
+						<a href="{% url 'service_add' %}"> <h3>ثبت خدمت جدید</h3></a>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 ">
+				<div class="card card-style ms-2 ms-md-0">
+					<a href="{% url 'service_list' %}"><img src="{% static 'front/assets/images/customer/services_list.png' %}" class="img-fluid"></a>
+					<div class="content pb-0">
+						<a href="{% url 'service_list' %}"><h3>مدیریت خدمات</h3></a>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
 {% endblock %}

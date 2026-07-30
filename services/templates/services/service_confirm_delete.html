@@ -1,0 +1,32 @@
+{% extends 'front/_base.html' %}
+{%load static %}
+{% load i18n %}
+{% load humanize %}
+{% block page_title %}
+    {% trans 'delete service' %}
+{% endblock %}
+{% block content %}
+
+{% trans 'services' as page_cat %}
+{% trans 'delete service' as title_page %}
+{% include 'front/partials/breadcrumbheader.html' with page_cat=page_cat header_title=title_page %}
+
+                        <div class="card overflow-visible card-style">
+                            <div class="content">
+                                <h4 class="mb-2">حذف خدمت</h4>
+
+                                <div class="alert alert-danger">
+                                    <p>آیا از حذف خدمت "<strong>{{ service.name }}</strong>" اطمینان دارید؟</p>
+                                    <p class="mb-0">این عمل قابل بازگشت نیست.</p>
+                                </div>
+
+                                <form method="post" class="mt-3">
+                                    {% csrf_token %}
+                                    <div class="mt-4">
+                                        <button type="submit" class="btn btn-danger">{% trans 'Yes, Delete' %}</button>
+                                        <a href="{% url 'service_list' %}" class="btn btn-secondary">{% trans 'Cancel' %}</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+{% endblock %}

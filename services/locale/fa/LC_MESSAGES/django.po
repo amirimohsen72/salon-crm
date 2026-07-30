@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-22 01:00+0330\n"
-"PO-Revision-Date: 2026-01-22 00:35+0330\n"
-"Last-Translator:   <amirimohsen72@gmail.com>\n"
+"POT-Creation-Date: 2026-07-30 12:47+0330\n"
+"PO-Revision-Date: 2026-07-30 12:53+0330\n"
+"Last-Translator: محسن ا <amirimohsen72@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,20 +19,36 @@ msgstr ""
 "X-Translated-Using: django-rosetta 0.10.3\n"
 
 #: .\services\apps.py:8 .\services\models.py:11
+#: .\services\templates\services\service_add.html:6
+#: .\services\templates\services\service_add.html:10
+#: .\services\templates\services\service_confirm_delete.html:10
+#: .\services\templates\services\service_edit.html:6
+#: .\services\templates\services\service_edit.html:10
+#: .\services\templates\services\servicelist.html:6
+#: .\services\templates\services\servicelist.html:10
 msgid "services"
 msgstr "خدمات"
+
+#: .\services\forms.py:11 .\services\models.py:13
+msgid "service name"
+msgstr "نام خدمت"
+
+#: .\services\forms.py:12 .\services\models.py:14
+msgid "description"
+msgstr "توضیحات"
+
+#: .\services\forms.py:13
+msgid "price (toman)"
+msgstr "مبلغ هزینه (تومان)"
+
+#: .\services\forms.py:14
+#| msgid "duration time"
+msgid "duration (minute)"
+msgstr "زمان (دقیقه)"
 
 #: .\services\models.py:10
 msgid "service"
 msgstr "خدمت"
-
-#: .\services\models.py:13
-msgid "service name"
-msgstr "نام خدمت"
-
-#: .\services\models.py:14
-msgid "description"
-msgstr "توضیحات"
 
 #: .\services\models.py:15
 msgid "price"
@@ -53,6 +69,70 @@ msgstr "فعال"
 #: .\services\models.py:18
 msgid "modify date"
 msgstr "تاریخ ویرایش"
+
+#: .\services\templates\services\service_add.html:11
+#| msgid "service name"
+msgid "service add"
+msgstr "ثبت خدمت جدید"
+
+#: .\services\templates\services\service_add.html:97
+#| msgid "active"
+msgid "Save"
+msgstr "ذخیره"
+
+#: .\services\templates\services\service_add.html:98
+#: .\services\templates\services\service_confirm_delete.html:27
+#: .\services\templates\services\service_edit.html:102
+msgid "Cancel"
+msgstr "لغو"
+
+#: .\services\templates\services\service_confirm_delete.html:6
+#: .\services\templates\services\service_confirm_delete.html:11
+#| msgid "service"
+msgid "delete service"
+msgstr "حذف خدمت"
+
+#: .\services\templates\services\service_confirm_delete.html:26
+msgid "Yes, Delete"
+msgstr "موافقم ، حذف شود "
+
+#: .\services\templates\services\service_edit.html:11
+#| msgid "service name"
+msgid "service edit"
+msgstr "ویرایش خدمت"
+
+#: .\services\templates\services\service_edit.html:101
+msgid "Save Changes"
+msgstr "ذخیره تغییرات"
+
+#: .\services\templates\services\servicelist.html:11
+#| msgid "services"
+msgid "service list"
+msgstr "لیست خدمات"
+
+#: .\services\templates\services\servicelist.html:59
+msgid "Not Found Any Service"
+msgstr "خدماتی یافت نشد"
+
+#: .\services\views.py:32
+msgid "Service created successfully."
+msgstr "خدمت با موفقیت ثبت شد."
+
+#: .\services\views.py:43
+msgid "Service updated successfully."
+msgstr "خدمت با موفقیت بروزرسانی شد."
+
+#: .\services\views.py:59
+msgid ""
+"Cannot delete this service because it has related appointments. Please "
+"remove the related appointments first."
+msgstr ""
+"نمی‌توان این سرویس را حذف کرد زیرا اطلاعات وابسته و مرتبطی دارد. لطفاً ابتدا"
+" اطاعات مرتبط را حذف کنید."
+
+#: .\services\views.py:63
+msgid "Service deleted successfully."
+msgstr "خدمت با موفقیت حذف شد ."
 
 #~ msgid "salon"
 #~ msgstr "سالن"
