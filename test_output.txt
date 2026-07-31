@@ -1,0 +1,87 @@
+Updated admin user password
+Login result: True
+Dashboard status: 200
+Dashboard URL: N/A
+Contains rzrv: True
+Contains tld: True
+Contains bg-fade2-green: True
+Contains bg-fade2-pink: True
+--- Content preview ---
+<!DOCTYPE HTML>
+<html lang="fa"  dir="rtl">
+    
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    
+
+    <title>
+    داشبورد
+</title>
+
+
+    
+    
+    <meta name="description" content="پنل کاربری سامانه مدیریت دستگاه های تیوان">
+
+
+
+
+<!-- ************************* CSS Files ************************* -->
+
+<!-- Main CSS File -->
+<link rel="stylesheet" type="text/css" href="/static/front/assets/styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/static/front/assets/fonts/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/static/front/assets/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="/static/front/assets/styles/custom.css">
+    <link rel="manifest" href="/static/front/assets/_manifest.json">
+    
+    <meta id="theme-check" name="theme-color" content="#FFFFFF">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/front/assets/app/icons/icon-192x192.png">
+    
+
+    <!-- استایل های اختصاصی برای صفحه -->
+    
+    <!-- تغییرات استایل دستی -->
+    <link rel="stylesheet" href="/static/front/assets/styles/customize.css">
+    <link rel="stylesheet" href="/static/front/assets/styles/newstyle.css"> 
+    <link rel="stylesheet" href="/static/front/my_rtl.css"> 
+</head>
+<body class="theme-light">
+<!-- Preloader Start -->
+<div id="preloader"><div class="spinner-border color-highlight" role="status"></div></div>
+<!-- Preloader End -->
+
+<div id="page">
+
+    <!-- Header -->
+    <div class="header-bar header-fixed header-app header-bar-detached">
+		<!-- <a data-back-button href="#"><i class="bi bi-caret-right-fill font-11 color-theme ps-2"></i></a> -->
+		<a href="#" class="header-title color-theme font-13"></a>
+		<a data-bs-toggle="offcanvas" data-bs-target="#menu-color" href="#"><i class="bi bi-palette-fill font-13 color-highlight"></i></a>
+		<a href="#" class="show-on-theme-light" data-toggle-theme><i class="bi bi-moon-fill font-13"></i></a>
+		<a href="#" class="show-on-theme-dark" data-toggle-theme ><i class="bi bi-lightbulb-fill color-yellow-dark font-13"></i></a>
+	</div>
+
+	<!-- Footer Bar-->
+    
+
+
+<div id="footer-bar" class="footer-bar footer-bar-detached">
+  <a href="/" class="active-nav"><i class="bi bi-house-fill font-16"></i><span>خانه</span></a>
+  <a href="#"><i class="bi bi-motherboard font-15"></i><span>devices</span></a>
+  <a href="#"><i class="bi bi-gear font-16"></i><span>تنظیمات</span></a>
+  <a href="#"><i class="bi bi-person font-17"></i><span>پروفایل</span></a>
+</div>
+
+
+   
+
+	<!-- Main Sidebar-->
+	<div id="menu-main" data-menu-active="nav-comps" data-menu-load="menu-main.html"
+		style="width:280px;" class="offcanvas offcanvas-end offcanvas-detached rounded-m">
+	</div>
+
