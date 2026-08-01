@@ -592,6 +592,21 @@
   background-image: linear-gradient(to bottom, #ff5982, #fb3365);
 }
 
+.btn-pink {
+  color: #fff !important;
+  background-color: #fb3365 !important;
+  border-color: #fb3365 !important;
+}
+
+.btn-pink:hover,
+.btn-pink:focus,
+.btn-pink:active,
+.btn-pink.active {
+  color: #fff !important;
+  background-color: #ff5982 !important;
+  border-color: #ff5982 !important;
+}
+
 .bg-fade2-magenta {
   background-color: rgba(150, 122, 220, 0.2) !important;
   color: #fff !important;

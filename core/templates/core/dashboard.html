@@ -18,28 +18,46 @@
 <!-- Today's Statistics Cards -->
 <div class="row mb-4">
     <div class="col-md-6 mb-2">
-        <div class="card card-style bg-fade2-green">
-            <div class="content text-center py-4">
-                <div class="d-flex align-items-center justify-content-center mb-2">
-                    <i class="bi bi-calendar-check font-24 color-green me-2"></i>
-                    <h5 class="color-green font-14 mb-0">امروز</h5>
+        <div class="card card-style">
+            <div class="content">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <div class="has-bg bg-green-dark rounded-s d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                            <i class="bi bi-calendar-check font-24 color-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="opacity-80 color-highlight font-12 mb-1">رزروهای امروز</h6>
+                        <h3 class="font-800 mb-0">{{ today_appointments_count }}</h3>
+                    </div>
+                    <div class="align-self-center ms-auto">
+                        <a href="{% url 'appointment_list' %}" class="btn btn-sm btn-success btn-outline-success">
+                            <i class="bi bi-chevron-left me-1"></i> مشاهده
+                        </a>
+                    </div>
                 </div>
-                <h2 class="font-800 color-green mb-1">{{ today_appointments_count }}</h2>
-                <p class="color-theme font-12 mb-0">رزروهای امروز</p>
-                <a href="{% url 'appointment_list' %}" class="btn btn-sm btn-success mt-2">مشاهده رزروها</a>
             </div>
         </div>
     </div>
     <div class="col-md-6 mb-2">
-        <div class="card card-style bg-fade2-pink">
-            <div class="content text-center py-4">
-                <div class="d-flex align-items-center justify-content-center mb-2">
-                    <i class="bi bi-gift font-24 color-pink me-2"></i>
-                    <h5 class="color-pink font-14 mb-0">امروز</h5>
+        <div class="card card-style">
+            <div class="content">
+                <div class="d-flex align-items-center">
+                    <div class="me-3">
+                        <div class="has-bg bg-pink-dark rounded-s d-flex align-items-center justify-content-center" style="width: 56px; height: 56px;">
+                            <i class="bi bi-gift font-24 color-white"></i>
+                        </div>
+                    </div>
+                    <div class="flex-grow-1">
+                        <h6 class="opacity-80 color-highlight font-12 mb-1">تولدهای امروز</h6>
+                        <h3 class="font-800 mb-0">{{ today_birthdays_count }}</h3>
+                    </div>
+                    <div class="align-self-center ms-auto">
+                        <a href="{% url 'customer_list' %}" class="btn btn-sm btn-pink btn-outline-pink">
+                            <i class="bi bi-chevron-left me-1"></i> مشاهده
+                        </a>
+                    </div>
                 </div>
-                <h2 class="font-800 color-pink mb-1">{{ today_birthdays_count }}</h2>
-                <p class="color-theme font-12 mb-0">تولدهای امروز</p>
-                <a href="{% url 'customer_list' %}" class="btn btn-sm btn-pink mt-2">مشاهده مشتریان</a>
             </div>
         </div>
     </div>
